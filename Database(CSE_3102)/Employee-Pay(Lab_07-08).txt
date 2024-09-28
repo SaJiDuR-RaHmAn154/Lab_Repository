@@ -1,0 +1,172 @@
+Database Schema for an Employee-pay scenario-
+
+employee(emp_id, emp_name, dept_id, type_of_work, hourly_rate) 
+dept(dept_id, dept_name, dept_location) 
+address(emp_id, street_no, street_name, city, zip_code) 
+project(project_id, project_name, project_location) 
+ft_pt_work(project_id, emp_id, dept_id, num_of_hours) 
+salary(emp_no, basic, allowance, deduction, net_salary, salary_date) 
+
+Remarks: 
+type_of_work: defines the type of employment (e.g., full time/part time) 
+dept_name: could be Engineering, Foreman and Labor; 
+net_salary: is a derive attribute and calculated as basic + allowance (i.e., 45 % of basic) – deduction (i.e., 9% of basic 
+as super annuation + 25% tax of the basic)
+For the full time employee the basic is a standard rate and not less than 5000$ (apply check constraints), but, for the parttime employee the basic is (hourly_rate* num_of_hours) and the hourly rates is between 25$ to 60$ (i.e., apply 
+constraints for checking) for a particular project.
+
+
+CREATE TABLE dept (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50),
+    dept_location VARCHAR(50)
+);
+CREATE TABLE employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    dept_id INT,
+    type_of_work VARCHAR(50) CHECK (type_of_work IN ('full time', 'part time')),
+    hourly_rate DECIMAL(5,2) CHECK (hourly_rate >= 25 AND hourly_rate <= 60 OR hourly_rate IS NULL),
+    FOREIGN KEY (dept_id) REFERENCES dept(dept_id)
+);
+CREATE TABLE address (
+    emp_id INT PRIMARY KEY,
+    street_no INT,
+    street_name VARCHAR(50),
+    city VARCHAR(50),
+    zip_code INT,
+    FOREIGN KEY (emp_id) REFERENCES employee(emp_id)
+);
+CREATE TABLE project (
+    project_id INT PRIMARY KEY,
+    project_name VARCHAR(50),
+    project_location VARCHAR(50)
+);
+CREATE TABLE ft_pt_work (
+    project_id INT,
+    emp_id INT,
+    dept_id INT,
+    num_of_hours INT,
+    PRIMARY KEY (project_id, emp_id),
+    FOREIGN KEY (project_id) REFERENCES project(project_id),
+    FOREIGN KEY (emp_id) REFERENCES employee(emp_id),
+    FOREIGN KEY (dept_id) REFERENCES dept(dept_id)
+);
+CREATE TABLE salary (
+    emp_no INT PRIMARY KEY,
+    basic DECIMAL(10, 2) CHECK (basic >= 5000 OR basic IS NULL),
+    allowance DECIMAL(10, 2),
+    deduction DECIMAL(10, 2),
+    net_salary DECIMAL(10, 2),
+    salary_date DATE,
+    FOREIGN KEY (emp_no) REFERENCES employee(emp_id)
+);
+
+INSERT INTO dept (dept_id, dept_name, dept_location) VALUES
+(1, 'Engineering', 'Googong'),
+(2, 'Labour', 'Googong'),
+(3, 'Foreman', 'Burton Canberra');
+
+INSERT INTO employee (emp_id, emp_name, dept_id, type_of_work, hourly_rate) VALUES
+(101, 'Alice', 1, 'full time', NULL),
+(102, 'Bob', 2, 'part time', 30.00),
+(103, 'Sajid', 3, 'full time', NULL),
+(104, 'Adam', 1, 'part time', 50.00),
+(105, 'Mark', 2, 'full time', NULL),
+(106, 'Arthur', 3, 'part time', 45.00),
+(107, 'Frank', 1, 'full time', NULL),
+(108, 'Henry', 2, 'part time', 40.00),
+(109, 'Jack', 3, 'part time', 35.00),
+(110, 'Rose', 1, 'full time', NULL);
+
+INSERT INTO address (emp_id, street_no, street_name, city, zip_code) VALUES
+(101, 12, 'Main St', 'Googong', 2620),
+(102, 23, 'King St', 'Googong', 2620),
+(103, 45, 'Queen St', 'Burton Canberra', 2905),
+(104, 67, 'High St', 'Googong', 2620),
+(105, 89, 'Low St', 'Googong', 2620),
+(106, 56, 'Hill St', 'Burton Canberra', 2905),
+(107, 11, 'Lake St', 'Googong', 2620),
+(108, 99, 'Pine St', 'Burton Canberra', 2905),
+(109, 22, 'River St', 'Burton Canberra', 2905),
+(110, 78, 'Valley St', 'Googong', 2620);
+
+INSERT INTO project (project_id, project_name, project_location) VALUES
+(1, 'Googong Subdivision', 'Googong city'),
+(2, 'Burton Highway', 'Burton Canberra');
+
+INSERT INTO ft_pt_work (project_id, emp_id, dept_id, num_of_hours) VALUES
+(1, 101, 1, 40),
+(1, 102, 2, 25),
+(2, 101, 3, 30),
+(1, 104, 1, 15),
+(2, 105, 2, 35),
+(1, 106, 3, 20),
+(2, 107, 1, 40),
+(1, 108, 2, 30),
+(2, 109, 3, 20),
+(1, 110, 1, 40);
+INSERT INTO salary (emp_no, basic, allowance, deduction, net_salary, salary_date) VALUES
+(101, 6000.00, 2700.00, 2040.00, 6660.00, '2024-08-01'),
+(103, 5500.00, 2475.00, 1870.00, 6105.00, '2024-08-01'),
+(105, 5200.00, 2340.00, 1768.00, 5772.00, '2024-08-01'),
+(107, 5900.00, 2655.00, 2006.00, 6549.00, '2024-08-01'),
+(110, 5000.00, 2250.00, 1700.00, 5550.00, '2024-08-01');
+
+1. List the names of all Engineers in Googong Subdivision project located at Googong city
+
+SELECT e.emp_name,p.project_name,p.project_location
+FROM employee e
+JOIN dept d ON e.dept_id = d.dept_id
+JOIN ft_pt_work f ON e.emp_id = f.emp_id
+JOIN project p ON f.project_id = p.project_id
+WHERE d.dept_name = 'Engineering'
+AND p.project_name = 'Googong Subdivision'
+AND p.project_location = 'Googong city';
+
+2. List the names of all Labour in Googong Subdivision project located at Googong city who work more than 20 
+   hours per week. 
+
+SELECT e.emp_name,f.num_of_hours
+FROM employee e
+JOIN dept d ON e.dept_id = d.dept_id
+JOIN ft_pt_work f ON e.emp_id = f.emp_id
+JOIN project p ON f.project_id = p.project_id
+WHERE d.dept_name = 'Labour'
+AND p.project_name = 'Googong Subdivision'
+AND p.project_location = 'Googong city'
+AND f.num_of_hours > 20;
+
+3. Retrieve the names and addresses of all employees who work on at least one project located in Burton Canberra 
+   but whose department has no location in Canberra
+
+SELECT e.emp_name, a.street_no, a.street_name, a.city, a.zip_code
+FROM employee e
+JOIN address a ON e.emp_id = a.emp_id
+JOIN ft_pt_work f ON e.emp_id = f.emp_id
+JOIN project p ON f.project_id = p.project_id
+JOIN dept d ON e.dept_id = d.dept_id
+WHERE p.project_location = 'Burton Canberra'
+AND d.dept_location != 'Canberra';
+
+4. Retrieve the names of employees who work on both the Googong Subdivision and Burton Highway project 
+
+SELECT DISTINCT e.emp_name
+FROM employee e
+JOIN ft_pt_work f1 ON e.emp_id = f1.emp_id
+JOIN project p1 ON f1.project_id = p1.project_id
+JOIN ft_pt_work f2 ON e.emp_id = f2.emp_id
+JOIN project p2 ON f2.project_id = p2.project_id
+WHERE p1.project_name = 'Googong Subdivision'
+AND p2.project_name = 'Burton Highway';
+
+5. Create a view which lists out the emp_name, dept_name, type_of_work, basic, deduction, net_salary from the above 
+   relational databases. 
+
+CREATE VIEW employee_salary_view AS
+SELECT e.emp_name, d.dept_name, e.type_of_work, s.basic, s.deduction, s.net_salary
+FROM employee e
+JOIN dept d ON e.dept_id = d.dept_id
+JOIN salary s ON e.emp_id = s.emp_no;
+
+
