@@ -1,0 +1,16 @@
+
+main:
+	iverilog -o out4 alu.v alu_tb.v alu_ADD_SUB4bit.v alu_SHL4bit.v alu_NAND4bit.v
+	vvp out4
+	#gtkwave test3.vcd &
+
+main2:
+	iverilog -o out4 RF1bit.v RF4bit.v RFSet.v RFSet_tb.v 
+	vvp out4
+	#gtkwave test3.vcd &
+
+main3:
+	iverilog -o out4 RAM1x1.v RAM2x1.v RAM2x2.v RAM2x2_tb.v 
+	vvp out4
+	#gtkwave test3.vcd &
+
