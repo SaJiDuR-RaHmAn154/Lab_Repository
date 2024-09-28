@@ -1,0 +1,114 @@
+$date
+	Sun Sep 15 16:38:51 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module adder4bit_tb $end
+$var wire 4 ! q [3:0] $end
+$var wire 4 " S [3:0] $end
+$var wire 1 # Co $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$var reg 1 & Cin $end
+$var reg 1 ' clk $end
+$var reg 1 ( en $end
+$var reg 1 ) reset $end
+$scope module circ $end
+$var wire 4 * A [3:0] $end
+$var wire 4 + B [3:0] $end
+$var wire 1 & Cin $end
+$var wire 1 ' clk $end
+$var wire 1 ( en $end
+$var wire 1 ) reset $end
+$var wire 5 , result [4:0] $end
+$var wire 4 - q [3:0] $end
+$var wire 4 . S [3:0] $end
+$var wire 1 # Co $end
+$scope module circ $end
+$var wire 1 ' clk $end
+$var wire 4 / d [3:0] $end
+$var wire 1 ( en $end
+$var wire 1 ) reset $end
+$var reg 4 0 q [3:0] $end
+$var reg 4 1 r_next [3:0] $end
+$var reg 4 2 r_reg [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 2
+b0 1
+b0 0
+b1110 /
+b1110 .
+b0 -
+b11110 ,
+b1111 +
+b1111 *
+1)
+0(
+0'
+0&
+b1111 %
+b1111 $
+1#
+b1110 "
+b0 !
+$end
+#10
+1'
+#20
+b1110 1
+0)
+1(
+0'
+#30
+b1110 !
+b1110 -
+b1110 0
+b1110 2
+1'
+#40
+b10 1
+0#
+b10 "
+b10 .
+b10 /
+0'
+b1 %
+b1 +
+b10 ,
+b1 $
+b1 *
+#50
+b10 !
+b10 -
+b10 0
+b10 2
+1'
+#60
+b111 1
+b111 "
+b111 .
+b111 /
+0'
+b111 ,
+b110 $
+b110 *
+#70
+b111 !
+b111 -
+b111 0
+b111 2
+1'
+#80
+0'

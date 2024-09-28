@@ -1,0 +1,40 @@
+$date
+	Mon May 13 23:42:43 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module multiplexer_tb $end
+$var wire 1 ! Y $end
+$var reg 4 " I [3:0] $end
+$var reg 2 # S [1:0] $end
+$scope module uut $end
+$var wire 4 $ I [3:0] $end
+$var wire 2 % S [1:0] $end
+$var reg 1 ! Y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 %
+b1111 $
+b0 #
+b1111 "
+1!
+$end
+#20000
+b1 #
+b1 %
+#40000
+b10 #
+b10 %
+#60000
+b11 #
+b11 %

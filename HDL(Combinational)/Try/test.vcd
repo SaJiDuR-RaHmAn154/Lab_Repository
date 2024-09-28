@@ -1,0 +1,55 @@
+$date
+	Tue May 14 11:43:36 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Multiplexer_Tb $end
+$var wire 1 ! Y $end
+$var reg 1 " E $end
+$var reg 4 # I [3:0] $end
+$var reg 2 $ S [1:0] $end
+$scope module circuit $end
+$var wire 1 " E $end
+$var wire 4 % I [3:0] $end
+$var wire 2 & S [1:0] $end
+$var reg 1 ! Y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx &
+bx %
+bx $
+bx #
+0"
+0!
+$end
+#10000
+b101 #
+b101 %
+1"
+#20000
+1!
+b0 $
+b0 &
+#30000
+0!
+b1 $
+b1 &
+#40000
+1!
+b10 $
+b10 &
+#50000
+0!
+b11 $
+b11 &
+#60000
