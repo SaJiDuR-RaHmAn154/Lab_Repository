@@ -1,0 +1,66 @@
+CREATE TABLE Student
+(
+     Stud_no varchar(30) PRIMARY KEY,
+     Stud_name varchar(50) NOT NULL
+);
+CREATE TABLE Book
+(
+     book_no varchar(30) PRIMARY KEY,
+     book_name varchar(50) NOT NULL,
+     author_name varchar(50) NOT NULL
+);
+
+CREATE TABLE Book_borrow 
+(
+    borrow_no INT PRIMARY KEY,
+    borrow_date DATE,
+    Stud_no VARCHAR(30),
+    book_no VARCHAR(30),
+    FOREIGN KEY (Stud_no) REFERENCES Student(Stud_no),
+    FOREIGN KEY (book_no) REFERENCES Book(book_no)
+);
+
+INSERT INTO Student VALUES ('C033001', 'Sajid');
+INSERT INTO Student VALUES ('C033002', 'Masum');
+INSERT INTO Student VALUES ('C033003', 'Sakib');
+INSERT INTO Student VALUES ('C033004', 'Munim');
+INSERT INTO Student VALUES ('C033005', 'Ovi');
+INSERT INTO Student VALUES ('C033006', 'Siam');
+INSERT INTO Student VALUES ('C033007', 'Alice');
+INSERT INTO Student VALUES ('C033008', 'Bob');
+INSERT INTO Student VALUES ('C033009', 'Miraz');
+INSERT INTO Student VALUES ('C033010', 'Soikot');
+
+INSERT INTO Book VALUES ('B001', 'Operating Systems', 'Tanenbum');
+INSERT INTO Book VALUES ('B002', 'Data Structures', 'Mark');
+INSERT INTO Book VALUES ('B003', 'Database Systems', 'Ramez');
+INSERT INTO Book VALUES ('B004', 'Computer Networks', 'Tanenbum');
+INSERT INTO Book VALUES ('B005', 'Artificial Intelligence', 'Stuart Russell');
+INSERT INTO Book VALUES ('B006', 'Algorithms', 'Cormen');
+INSERT INTO Book VALUES ('B007', 'Discrete Mathematics', 'Rosen');
+INSERT INTO Book VALUES ('B008', 'Linear Algebra', 'Gilbert');
+INSERT INTO Book VALUES ('B009', 'Quantum Physics', 'Richard');
+INSERT INTO Book VALUES ('B010', 'Introduction to Algorithms', 'Charles');
+
+INSERT INTO Book_borrow VALUES (1, '2023-01-01','C033001', 'B001');
+INSERT INTO Book_borrow VALUES (2, '2023-01-02','C033002', 'B001');
+INSERT INTO Book_borrow VALUES (3, '2023-01-03','C033002', 'B003');
+INSERT INTO Book_borrow VALUES (4, '2023-01-04','C033004', 'B004');
+INSERT INTO Book_borrow VALUES (5, '2023-01-05','C033005', 'B005');
+INSERT INTO Book_borrow VALUES (6, '2023-01-06','C033006', 'B001');
+INSERT INTO Book_borrow VALUES (7, '2023-01-07','C033009', 'B007');
+INSERT INTO Book_borrow VALUES (8, '2023-01-08','C033007', 'B008');
+INSERT INTO Book_borrow VALUES (9, '2023-01-09','C033004', 'B009');
+INSERT INTO Book_borrow VALUES (10, '2023-01-10','C033010','B010');
+
+
+SQL
+
+SELECT temp.book_name,MAX(Borrow_Count) as Mostly_Borrowed_Book_Count
+FROM (
+    SELECT b.book_name,COUNT(bb.borrow_no) as Borrow_Count
+    FROM book b 
+    JOIN book_borrow bb ON bb.book_no = b.book_no
+    GROUP BY b.book_name
+    ORDER BY Borrow_Count DESC
+    ) as temp;
