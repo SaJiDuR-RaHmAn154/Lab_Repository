@@ -105,6 +105,9 @@
 
    ---Piping (It's the way of sending the output of a command before the pipe symbol to the command after the pipe symbol)
 
+   - > (for storing text in a file)
+   - >> (appending text in the file with previous text in the file)
+
    
 
   
