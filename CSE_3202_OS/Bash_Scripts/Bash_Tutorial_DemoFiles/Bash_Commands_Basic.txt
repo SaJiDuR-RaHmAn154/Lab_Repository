@@ -132,9 +132,10 @@
    But if this was like, 
 
    [ 1 = 0 ]
+   
    echo $?  (Returns 1 as they are not same)
 
-   
+
 
 
 
