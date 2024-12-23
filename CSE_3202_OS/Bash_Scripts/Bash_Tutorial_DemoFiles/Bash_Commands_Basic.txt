@@ -209,8 +209,53 @@ case ${1:l} in
         ;;
 esac
 
-  
+
+---Array---
+
+  My_First_List=(One Two Three Four Five)
+  echo $My_First_List (prints the whole list)
+  echo ${My_First_List[@]} (same as before)
+  echo ${My_First_List[0]} (Prints the first item in the list but in bash terminal)
+
+  ---For Loop---
+
+  for item in ${My_First_List[@]}; do echo -n $item | wc -c; done 
+
+  N:B : Here -n is given to ignore newlines otherwise it will also count the new line as well
+
+ ----Functions----
+ 
+ !#/bin/zsh
+
+showupTime(){
+        up=$(uptime -u | cut -c4-)
+        since=$(uptime -s)
+        cat << EOF
+
+------
+This machine has been up for ${up}
+It has been running since ${since}
+------
+}
+showupTime
 
 
+but this is for bash terminal. In Mac -s,-u don't supports.
 
+#!/bin/zsh
 
+showupTime() {
+    up=$(uptime | awk -F'(,|up)' '{print $2}' | sed 's/^[ \t]*//')
+    since=$(who -b | awk '{print $3, $4}')
+    cat << EOF
+
+------
+This machine has been up for ${up}
+It has been running since ${since}
+------
+EOF
+}
+
+showupTime
+
+(This is supported in Mac)
