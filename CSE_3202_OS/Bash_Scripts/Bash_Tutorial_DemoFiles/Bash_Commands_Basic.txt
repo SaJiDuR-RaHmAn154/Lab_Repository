@@ -123,20 +123,40 @@
    
    --- Check <<< operator by yourself
 
-   -- Test operator 
+   -- Test operator ---
    [ hello = hello ] 
-   echo $? ($? - denotes the code for the last line of the execution of code)
+   echo $? ($? - denotes the exit code for the last line of the execution of code)
 
    -in this case it returns 0 (As it evaluates the strings are same)
 
    But if this was like, 
 
    [ 1 = 0 ]
-   
+
    echo $?  (Returns 1 as they are not same)
 
+   We can also write
+   [ 1 -eq 1 ]
+   echo $?
 
+   --if elif else statement ([] -denotes test operator, ${1,,} is a parameter expansion in which we are checking whether the 1st positional argument is equal to a certain value.Allow us to ignore upper and lower case barriers)---
 
+   vim ifelifelse.sh
+
+  -i 
+  #!/bin/zsh
+
+if [ ${1,,} = Sajid ]; then
+   echo "You are the boss here!!"
+elif [ ${1,,} = help ]; then
+   echo "Just enter your username dude!!"
+else
+   echo "I don't know who you are!! Get out of here, buddy."
+
+ -esc
+ -:wq
+ -chmod u+x ifelifelse.sh 
+ - ./ifelifelse.sh Sajid
 
 
   
