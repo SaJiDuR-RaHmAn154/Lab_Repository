@@ -108,7 +108,35 @@
    - > (for storing text in a file)
    - >> (appending text in the file with previous text in the file)
 
+   -- < (input from files)
+
+   wc -w hello.txt (shows word count as well as the file name)
+   but if we type,
+   wc -w < hello.txt (It outputs the number of words in that text file)
+
+   --- cat << EOF
+   i will
+   write some
+   command here
+   EOF 
+   (It prints all the lines taken as inputs)
    
+   --- Check <<< operator by yourself
+
+   -- Test operator 
+   [ hello = hello ] 
+   echo $? ($? - denotes the code for the last line of the execution of code)
+
+   -in this case it returns 0 (As it evaluates the strings are same)
+
+   But if this was like, 
+
+   [ 1 = 0 ]
+   echo $?  (Returns 1 as they are not same)
+
+   
+
+
 
   
 
