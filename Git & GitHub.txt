@@ -1,0 +1,146 @@
+- Git (free and open source version control system)(faster,used in companies,most famous)
+- version control system - tools that help to tracks changes in code
+- It helps to keep the track of each steps of development so that we can easily change any step in future without harming the rest of the steps
+
+1. Track History
+2. Help to collaborate
+
+GitHub: Website where we host repositories(in-short repo o bole) online (Generally we upload projects)
+-------
+-Changes in gitHub occurs in 2 steps (Add and Commit)
+-Commit shows the changes in the repositories
+-After commit GItHub shows the last change.Clic and check what is changed in the file
+
+Configuring Git
+----------------
+Commands: git config --global user.name "SaJiDuR-RaHmAn154"
+          git config --global user.email "sajidurrahmantarafder@gmail.com"
+          check:  git config --list (provides the list)
+          ------
+
+Clone Command:
+--------------
+- Cloning a repo means downloading a repo in our local machine(VScode)
+- Cloning is necessary to make changes in project that is already uploaded in the gitHub.
+
+Command:  git clone 'some link' (follow this in the vscode terminal to clone a repo from GitHub)
+-------- 
+        (The link is copied from gitHub repository folder 'code' section and from HTTPS portio)
+        Ex- git clone https://github.com/SaJiDuR-RaHmAn154/delta-demo.git
+        (check by ls)
+
+Status Command:(It shows the current status of all the files of a folder)
+---------------
+Syntax:  git status
+-------
+-When a new file is added to a repo, that file will be untracked and the old files are tracked files
+-'add' is used to make untracked file tracked (but this is not commited file.This is still unmodified file(status))
+-making any changes in file (then it will become modified file and will be highlighted as green color is vscode)
+-after modified, they will be staged 
+
+Commit:
+-------
+- commit is a 2 step process (add and commit)
+- When we are going to change anything in the repo then at first we will 'add' then we will commit
+- add korle status hoye jabe 'staged'
+- staged hoye jaoar por file k commit korte hobe
+
+command:    git add fileName (then the file will be staged(check using git status command))
+--------
+N.B:  to 'add' all untracked files we can make command : git add .
+----
+To make commit,(command)
+  git commit -m "some message" (syntax-here msge should be meaningful)
+
+Push Command: (To upload local(my pc) repository conetent to GitHub)
+-------------
+syntax- git push origin master/main (Here master/main is branch name)
+-------  
+
+- init command: used to create a new git repo in local system
+--------------- 
+  command :  git init
+  --------
+-Pushing a new repo created in the local system in the GitHub:
+--------------------------------------------------------------
+-At first create a repo in the local system. Then create a repo in GitHub in the same name.
+- add and commit new files in the repo using Commands
+-then copy https://github.com/SaJiDuR-RaHmAn154/project2.git link after creating a repo in gitHub
+
+-> Use this in the terminal -  git remote add origin 'link' (syntax)
+-To verify remote (git remote -v) 
+- After that write - git remote -v (To check where to fetch and where to push)
+- Thus the GitHub new repo is connected to the local system repo to perform push and pull(fetch) operation
+
+-> git branch (to check branch)
+-> git branch -M main (to set git branch as main)
+-> git push origin main (to push this local file to gitHub)
+
+- If we make any change to our repo, then we at first add it.
+  Then commit it. Then push it by using git push origin main.
+
+N.B:  Working repo te jeye, jodi
+----   
+      git push -u origin main (Setting the upstream)
+  
+--> ai command lekhar por theke ja anything change kore add,commit korar por
+    push korar somoy only 'git push' likhlei hobe.
+
+Git Branches:
+-------------
+- Branch is one kind of copy during making the changes in the real file.
+- There is a main branch(default).And another branches are used to make changes for the copied file of the main file.
+- After initial commit, development sector a alada alada branch banay alada alada developer different different task perform kore.
+- After performing all the tasks of different branches, main branch will merge all the sub-branches or side branches tasks.
+
+Branch related commands:
+========================
+1. git branch (to check current branch)
+2. git branch -M newName(renaming the branch)
+3. git checkout branchName (to navigate->going from one branch to another branch)
+4. git checkout -b newBranchName (creating new branch with valid name)
+5. git branch -d branchName (to delete a branch)
+
+Merging branches:
+==================
+-> git push --set-upstream origin feature(to set the upstream for new branch feature)
+-> git diff branchName(main) (when we are in feature branch and run this command,it will show the differences between the files,commits of the two branches)
+-> git merge branchName (to merge 2 branches)  
+
+Another way: (PR-Pull Request) - The exists a button of Compare and Pull request in GitHub
+------------
+- It lets you tell others about changes you've pushed to a branch in a repository in gitHub
+N.B: PR merge kora o akta commit
+----
+
+Pull Command: used to fetch and download content from a remote repo and immediately update the local repo to match the content
+-------------
+-> syntax: git pull origin main
+
+- GitHub a PR request merge korar por j change holo seta local device ao anar jonno ata kora hoy
+
+Merge Conflicts: If similar type of changes are made in same files of different branches and tried to be merged, then Git is unable to automatically resolve the differences
+---------------- in code between two commits 
+
+- app.js a aktate Add new feature - button arektate add new feature - form likhe git merge feature command dile conflict show korbe
+  jeta manually solve korte hobe
+- manually solve korar por add,commit kore then merge kore push korte hobe
+  
+Some necessary Commands:
+========================
+1. git reset fileName/git reset (vul kore kisu add kore dile(Staged kore dile), seta unadd korar way)-after that git status will become staged to modified
+2. commited changes (for one commit)
+   - git reset HEAD~1 (resetting the last commit which is pointed by the HEAD pointer)(atar karone commit,add duitai undo hoye jabe)
+3. git log (this shows all the recent commits in chronological order)
+4. Commited changes for many commits
+  - git reset commit-hash (copy from git log)
+  - git reset --hard commit-hash (delete all the changes) 
+
+Forking: copying any repo of another GitHub user to own account
+--------
+- A rough copy of a repo
+- There is forking option in gitHub
+- Then we can edit the copied repo 
+- After that we can create a new pull request
+- This PR will be showed to the owner of the main file
+- If they want, they can merge it to the base repository
