@@ -293,3 +293,42 @@ N.B: -> Path name extensions (Matching patterns)
 
 39. gunzip filename.gz (unzips the zipped file)
 
+40. nano fileName (opens an editor where I can edit text)
+
+ There are some options in this editor. Try yourself
+ (ctrl+s to save it)
+ (ctrl+g to get manual)
+ (# for commenting)
+
+41. alias myls='ls -a'
+    myls (shows ls -a command outputs)
+
+   ---- For MacOS ----
+
+   - ls -a (to find .zshrc file to save default zsh commands as alias)
+   -if there is no .zshrc file, then create it as followings: 
+
+   nano .zshrc 
+   alias print='echo'
+
+   -ctrl+x 
+   - save yes
+   - print {1..100} (prints 1 to 100 in the terminal-works as substitute of echo command)
+
+   - To switch the source of the terminal, (source .zshrc)
+   - which gcc (provides gcc path)
+   - alias can be saved in some special files like .zshrc to use them in any  
+     time, we want after opening the terminal. If we don't save them in the file, they will be vanished.
+
+     -echo $PWD
+     -echo $SHELL 
+     -echo $USER 
+
+     nano .zshrc
+     alias lsthis='ls $PWD' (shows current PWD. Double quote dile j location a save korsi otai show korbe always)
+     
+     In terminal,
+     source .zshrc
+     lsthis
+
+42.
