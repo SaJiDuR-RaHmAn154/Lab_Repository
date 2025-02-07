@@ -1,5 +1,7 @@
 Commands: https://www.freecodecamp.org/news/the-linux-commands-handbook/
 
+// ******tldr <command> -> shows the manual for that particular command
+
 1.whoami -> currently logged in username
 
 2.man <command> -> provides the manual of that particular command (man whoami)
@@ -135,6 +137,7 @@ clear -x -> (here -x is an option) clears the visual terminal but scroll up to g
     echo $PATH -> prints path
 
     echo $USER -> prints environment username
+
 22. wc fileName (prints newline,word count, byte for each file and fileName)
 
     wc -l (lines)
@@ -331,9 +334,9 @@ N.B: -> Path name extensions (Matching patterns)
      source .zshrc
      lsthis
 
-42. cat deadplayers (contains bunch of txt files) | rm (rm won't delete all the files. shows error)
+42. cat deadplayers (contains bunch of txt files names) | rm (rm won't delete all the files. shows error)
 
-   cat deadplayers | xargs rm (Now all the txt files will act like standard input for usin xargs command and rm will work)
+   cat deadplayers | xargs rm (Now all the txt files will act like standard input for using xargs command and rm will work)
 
    find .size +1M | xargs ls -lh (Human readable format) 
 
@@ -424,7 +427,7 @@ N.B: -> Path name extensions (Matching patterns)
     cd bin 
     ncal
 
-   ls -l pwd (to check the permissions for pwd command)
+   pwd | ls -l  (to check the permissions for pwd command)
 
 
 49. chmod (alter the permissions)
