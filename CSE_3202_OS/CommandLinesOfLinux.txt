@@ -177,7 +177,9 @@ clear -x -> (here -x is an option) clears the visual terminal but scroll up to g
 
     sort fileName | uniq -c (shows the count for each line)
 
-    sort fileName | uniq -c | sort -n (shows the sorted list based on the numeric count for each line)
+    sort fileName | uniq -c | sort -nr (shows the sorted list based on the numeric count for each line)
+
+    # Type tldr uniq (shows the manual) 
 
 
 N.B: -> Path name extensions (Matching patterns)
