@@ -1,0 +1,1 @@
+clang++ -std=c++17 -isystem /opt/homebrew/include -L/opt/homebrew/lib -lgtest -lgtest_main -pthread test.cpp -o test
