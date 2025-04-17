@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "shprototypes.h": "c",
+    "xinu.h": "c",
+    "semaphore.h": "c"
+  }
+}
