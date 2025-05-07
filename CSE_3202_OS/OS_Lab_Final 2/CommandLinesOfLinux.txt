@@ -1,0 +1,444 @@
+Commands: https://www.freecodecamp.org/news/the-linux-commands-handbook/
+
+// ******tldr <command> -> shows the manual for that particular command
+
+1.whoami -> currently logged in username
+
+2.man <command> -> provides the manual of that particular command (man whoami)
+
+// By hitting space, we can scroll down page by page
+
+3.clear -> clears the terminal (also clears the history)
+
+// Synopsis in manual page show the syntaxes of all possible commands(optional in brackets) using that particular command
+
+clear -x -> (here -x is an option) clears the visual terminal but scroll up to get the previous history (shortcut- ctrl+L)
+
+4. pwd-> prints current working directory
+
+5. ls -> list the contents of a directory
+ 
+   ls FolderName -> Shows the content inside that folder
+   
+   ls FolderName/Folder/ -> Shows the contents inside that path of the folder (ls Desktop/fruits/)->cars
+
+   ls fullPath of a folder -> contents of that folder
+
+   relative path(j directory te asi setar file dekhte chaile) and actual path-absolute location to get contents of that directory from any current location(full path-> ls /home/sajidur154/Desktop)
+
+   ls -l (Provides detailed information- modification date,owner of the file etc)
+
+   ls -a (Shows hidden files)
+
+   ls -a -l (shows regular and hidden files together) (ls -al also similar)
+   
+6. cd - change directory
+   
+   no man cd exits. so put help cd
+   
+   cd .. -> to back to one previous level directory
+
+   cd also actual and relative path(relative to our current location) works (cd /home/sajidur154/Desktop/fruits/cars/)
+   
+   multiple level back ->  cd ../../../..
+
+   --all absolute path starts with a forward slash(/) -> root directory (highest level directory-> we cannot go back further cd .. won't work) is / (to go there type cd /)-> admin stuffs are there
+
+   --> cd / -> ls -> cd home -> cd sajidur154 -> ls
+
+   --> cd tilda -> takes to /home/sajidur154 (home directory- tilda)
+
+7. mkdir folderName1 folderName2 .... - to create folder
+   
+   mkdir -p summer/seeds/lettuce (create nested folders-> one inside another)
+
+   mkdir tilda/blahblah ->creates a folder in root directory
+
+8. touch fileName1 filename2 ....(if it doesn't exists, then creates it->empty file)
+
+9. rmdir folderName1 folderName2 .... (deletes empty directory)
+
+10. rm fileName or foldernName (deletes stuffs permanently from the system)-can delete multiple at the same time also
+
+    rm -v fileName (removes with a message popped off in the console)
+    
+    rm -r folderName (recursive delete-> non-empty folders can also be deleted)
+   
+    rm -v -r seed (removers seed and lettuce folder inside seed with a message)
+
+    rm -ri folderName (interactive delete-> ask everytime whether I'm gonna delete a folder or not)
+    
+    rm -fr folderName (deletes the whole directory forcefully)
+
+11. open fileName(opens the file in another window)
+
+    open . (opens the current directory)
+
+12. mv prevName NewName (rename)
+
+    mv -v jornal journal (renamed jornal -> journal with this message)
+
+    mv filename1 filename2 FolderName (move the file to that folder. It can also move multiple files in that folder)
+
+13. cp fileName or FolderName NewName(cp spring SPRING ->creates a copy of spring named as SPRING)
+
+    cp -r folder NewName (copies a folder even though it's not empty)
+
+    cp filename path/NewName (copies a file and moves it to that directory named as NewName)
+
+14. head fileName (outputs first 10 lines)
+    
+    head filename -n numberOfLines (fixed number of lines printing)
+
+15. tail filename (last 10 lines)
+    
+    tail filename -n numberOfLines
+
+    tail -f filename (end of the file print howar por wait korbe.New kisu add hole print korbe.Used for log files)-keeps listening and updating
+
+16. date (prints date)
+
+17. > (redirect command)
+   
+    date > today.txt (saves the current date in today.txt file->replaces the whole content of the file by this date)
+
+    if today.txt doesn't exist, it will create the file and add the content.
+
+18. >> (appends the content with the current contents of the file)
+
+    pwd>>today.txt(contains date and pwd both)
+  
+    N.B: Using ctrl+TAB, terminal automatically detect which file I'm gonna write
+
+19. cat fileName (prints the whole file)
+
+    cat filename1 filename2 (concatenates the two files and prints)
+
+    cat filename1 filename2 fileName3 >> NewFile (saves all the concatenated contents in the NewFile after creating it)
+
+    cat -n fileName (displays using lines numbers)
+
+20. less fileName (for the files having huge contents. New content will print after scrolling. to exit press q)
+
+    /search content-> to search any content 
+    
+    G -> to reach end
+ 
+    g -> to reach top
+
+21. echo "content" -> prints the content
+
+    echo "content" >> fileName -> add the content to the file
+
+    echo tilda -> prints home directory location/path
+  
+    echo 'tilda' -> prints the string tilda
+
+    echo $PATH -> prints path
+
+    echo $USER -> prints environment username
+
+22. wc fileName (prints newline,word count, byte for each file and fileName)
+
+    wc -l (lines)
+   
+    wc -w (word count)
+    
+ 
+23. | (piping - integrating multiple commands sequentially-> execution order left to right)
+
+   date | wc (prints info)
+
+   cat fileName1 fileName2 | wc -l (prints the lines in concatenation)
+
+   cat fileName1 fileName2 | wc -l >> file3 (saves the content)
+
+24. sort fileName (outputs sorted info from the file but don't store them in the file) -case sensitive
+
+    sort fileName >> Newfile (to store sorted content) - it doesn't sort numerically but alphabetically
+
+    sort -n numericFile (sorts the numbers)
+ 
+    sort -nr numericFile (sorts the numbers in reverse order)
+   
+    sort -nu numericFile (sorts the unique numbers)
+
+    sort -nu numericFile | wc -l (total unique numbers)
+
+    cat fileName1 fileName2 | sort
+
+25. uniq (checks consecutive 2 lines and prints unique value)
+
+    sort fileName | uniq (thus we can get unique values easily)
+
+    sort fileName | uniq -d (shows the duplicate lines)
+
+    sort fileName | uniq -u (shows the non-duplicate lines only)
+
+    sort fileName | uniq -c (shows the count for each line)
+
+    sort fileName | uniq -c | sort -nr (shows the sorted list based on the numeric count for each line)
+
+    # Type tldr uniq (shows the manual) 
+
+
+N.B: -> Path name extensions (Matching patterns)
+
+    echo *.txt
+
+    ls -l *.txt (matches the txt part and prints)
+
+    cat *.??? (?-matches single char and * ->any string)
+
+    rm *.?? (removes)
+
+    -> curly brace extension
+
+    touch app.{js,py,html,css} -> creates those four files 
+    day{1..10} -> prints day1,day2,...,day10
+
+    *** mkdir dir{1..100} / touch file{1..100} -> creating bunch of files
+
+
+
+26. diff fileName1 fileName2 (prints difference between the two files)
+
+    diff -y fileName1 fileName2 (side by side)
+
+    diff -u fileName1 fileName2 (context of changes or differences)
+
+27. find . -name 'Sajid' (exact same -> Tries to find whether there is any Sajid named file exists)
+    
+    find . -name '*Sajid*'(Nested anywhere in the file name)
+
+    . (denotes current folder. we can put any folder name there)
+
+    find . -type d (prints the directories inside the current folder)
+
+    find . -type f (prints the files inside the current folder)
+ 
+    find . -type d -name 'W*' (prints the directories starts with W inside the current folder)
+
+    find . -type d -name 'W*' -or -name 'S*' (prints the directories starts with W or S, inside the current folder)
+
+    check exec from module
+
+28. grep searchedWord fileName (finds the searched word inside the file) -> grep Sajid app.css
+
+    grep -n searchedWord fileName (prints with the line number) -> grep -n Sajid app.css
+
+    grep -nC 2 Sajid app.css (with 2 lines before and after)
+
+    grep -r "Chicken" (Finds all containing the word from files anywhere)
+
+
+29. du (prints the size of each files and folders in current directory)
+  
+    du fileName (prints the size)
+
+    du -m fileName (prints the size in MB)
+
+    du -k fileName (prints the size in KB)
+
+    du -kh fileName (prints the size in KB-> with unit also)
+
+    du -h | sort (prints the files based on the size after sorting)
+
+30. df (prints disk usage)
+  
+    df -h (human readable)
+
+    df -h DirectoryName (human readable size of that directory)
+
+31. history (prints the whole history of the written commands in the shell)
+
+    !NumberOftheCommand (runs the command again. !-> exclamation sign)
+
+    history | less (page by page history of commands appear) -> g,G (top,bottom)
+
+    history | grep 'Searched Word' (finds those commands)
+
+32. ps (list and status of currently running processes)
+
+    ps ax
+
+    ps axww (module)
+
+    ps axww | grep "firefox" (finds all the processes containing firefox)
+
+33. top (shows topmost cpu intensive processes information)
+
+    top -o mem (sorting based on memory)
+
+34. kill processID (kills the process)
+
+    kill -l (lists the signals)
+
+    SIGTERM(15) -> shuts down the process normally
+    
+    SIGKILL(9) -> kills the process forcefully
+
+    kill -9 processID (get this id from PS a)
+
+35. killall -9/-15/-KILL/-SIGKILL processName (kills all the processes of that name)
+
+36. jobs,fg,bg (module)
+
+37. sleep noOfSeconds (haults the terminal control)
+ 
+    sleep 50 & (In the background)
+
+    fg (to run it to the foreground)
+
+    ctrl+c (to stop)
+
+38. gzip -k filename (keeps the main one and also zipped one) -> to reduce the actual size of the main file by zipping
+
+    gzip -d filename.gz (unzips the zipped file)
+
+39. gunzip filename.gz (unzips the zipped file)
+
+40. nano fileName (opens an editor where I can edit text)
+
+ There are some options in this editor. Try yourself
+ (ctrl+s to save it)
+ (ctrl+g to get manual)
+ (# for commenting)
+
+41. alias myls='ls -a'
+    myls (shows ls -a command outputs)
+
+   ---- For MacOS ----
+
+   - ls -a (to find .zshrc file to save default zsh commands as alias)
+   -if there is no .zshrc file, then create it as followings: 
+
+   nano .zshrc 
+   alias print='echo'
+
+   -ctrl+x 
+   - save yes
+   - print {1..100} (prints 1 to 100 in the terminal-works as substitute of echo command)
+
+   - To switch the source of the terminal, (source .zshrc)
+   - which gcc (provides gcc path)
+   - alias can be saved in some special files like .zshrc to use them in any  
+     time, we want after opening the terminal. If we don't save them in the file, they will be vanished.
+
+     -echo $PWD
+     -echo $SHELL 
+     -echo $USER 
+
+     nano .zshrc
+     alias lsthis='ls $PWD' (shows current PWD. Double quote dile j location a save korsi otai show korbe always)
+     
+     In terminal,
+     source .zshrc
+     lsthis
+
+42. cat deadplayers (contains bunch of txt files names) | rm (rm won't delete all the files. shows error)
+
+   cat deadplayers | xargs rm (Now all the txt files will act like standard input for using xargs command and rm will work)
+
+   find .size +1M | xargs ls -lh (Human readable format) 
+
+   xargs (Will take arguments and converts them to a list of arguments that other command will accept)
+
+
+43. ln (Link command - Creates link between two files like when we click an application, it runs particular program which is linked with it)
+
+    mkdir Links
+    cd Links
+    echo "I am original" >original.txt
+    ls 
+    cat original.txt 
+    ln original.txt hardlink.txt (Creates a hardlink.txt and the same content will be there but it's not like cp(copy) command)
+    cat hardlink.txt 
+   
+    Again,
+    echo "This is more stuffs" >> original.txt
+    cat original.txt 
+    cat hardlink.txt (We will see the same stuffs in hardline.txt also as it's linked with original.txt)
+
+
+    echo "Change from Hardlink" >> hardlink.txt (Also make change in original.txt as the link is bidrectional)
+    cat original.txt 
+    cat hardlink.txt 
+
+    rm original.txt (Hardlink file will persist and still contains the same contents)
+
+    Softlink:
+
+    echo "I am original" >> originalSoft.txt
+    ln -s originalSoft.txt softlink.txt
+    ls (Softlink(symbolic link) will be highlighted with color)
+    ls -l (Arrow)
+
+    echo "Change to original" >> originalSoft.txt 
+    cat originalSoft.txt 
+    cat softlink.txt 
+
+    echo "Change to symlink" >> softlink.txt
+    cat softlink.tx
+    cat originalSoft.txt (Both files changed)
+
+
+    rm originalSoft.txt
+    cat softlink.txt (No such file in directory when original is gone, content will be removed.In hardlink, it will persist)
+
+44. who (shows all the running terminal windows as ttys00* (*->digit))
+
+   It is used when bunch of users are using the same device terminals in different windows
+
+45. su username(switch user-> switching to another user of the device in the terminal but in new window the user will be the old one)
+
+   But if an user tries to access another user's resources, the permission will be denied
+
+   exit (to exit back to the current user)
+
+   su - username (to switch the terminal to that user's actual home)
+
+46. sudo (super users do)
+
+    cd / 
+    cd bin (ls- you will see root is the owner of that bin folder that contains all the core programs in the machine)
+
+    nano /etc/hosts (this will be unwritable)
+    sudo nano /etc/hosts (Ask for password for the current user and after that it grants the editing permission)
+
+    But this editing permission will be granted if the user is created with adminstrative power
+
+    sudo is also used for installing packages, softwares
+
+
+47. passwd (used for changing password for the current user)
+
+    sudo passwd username (change pass for that particular username)
+
+48. chown (Change the owner)
+
+
+   # 10 characters will be there
+   ls -al (Understanding file permission. SS are taken. - (Non readable and writable))
+
+   r- read
+   w -write 
+   X - execute 
+
+    cd /
+    cd bin 
+    ncal
+
+   pwd | ls -l  (to check the permissions for pwd command)
+
+
+49. chmod (alter the permissions)
+
+    chmod mode file (syntax)
+
+    touch cmod
+    ls -l cmod
+    chmod g+w cmod  (Changes the group permission to write also)
+    ls -l cmod
+
+

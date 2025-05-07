@@ -1,0 +1,71 @@
+$date
+	Mon May 13 23:02:50 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module decoder3to8_tb $end
+$var wire 8 ! Y [7:0] $end
+$var reg 3 " A [2:0] $end
+$var reg 1 # E $end
+$scope module uut $end
+$var wire 3 $ A [2:0] $end
+$var wire 1 # E $end
+$var reg 8 % Y [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 %
+b0 $
+0#
+b0 "
+b0 !
+$end
+#20000
+b1 !
+b1 %
+1#
+#60000
+b10 !
+b10 %
+b1 "
+b1 $
+#80000
+b100 !
+b100 %
+b10 "
+b10 $
+#100000
+b1000 !
+b1000 %
+b11 "
+b11 $
+#120000
+b10000 !
+b10000 %
+b100 "
+b100 $
+#140000
+b100000 !
+b100000 %
+b101 "
+b101 $
+#160000
+b1000000 !
+b1000000 %
+b110 "
+b110 $
+#180000
+b10000000 !
+b10000000 %
+b111 "
+b111 $
+#200000

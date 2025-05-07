@@ -1,0 +1,262 @@
+---Bash Commands---
+
+*** vim text Editor for Linux Distributions.
+
+  ---vim textfile.txt
+  - i to go insert mode
+  - type the text
+  -press esc button
+  - :wq -> writes the file, saves it and quits vim at the same time 
+  - :q ! -> quits vim without making changes in the file
+
+
+  ---vim shelltest.sh
+  - a to go append mode
+  - esc
+  - :wq
+  - ls
+  - cat shelltest.sh (shows the command written in the vim file)
+
+  -But if we write
+  -bash shelltest.sh (it runs the shell script using bash interpreter)
+
+  - echo $SHELL (prints the current shell that you are working in)
+
+  --vim shelltest.sh
+  - a to go append mode
+
+  #!/bin/zsh
+  echo Hello World!
+
+  -esc
+  -:wq 
+
+  (Providing the path of the shell interpreter)
+
+  Now Run this command:
+
+  ./shelltest.sh (period /shelltest.sh) -Permission denied
+
+  - To provide permission only to the owner of the system, write the following command,
+
+  -- chmod u+x shelltest.sh
+
+  now run 
+  -./shelltest.sh (Output will be shown in the terminal)
+
+  ----- Variables---
+
+  - type
+  - First_Name=Sajid
+  - Press Enter 
+  - echo Hello $First_Name (Prints Hello Sajid)
+
+  ---Examples of uses of Variables
+
+  -using vim
+  -vim hellothere.sh
+  -i to insert mode activation
+
+  #!/bin/zsh
+  F_Name=Sajidur
+  L_Name=Rahman
+
+  echo Hello $F_Name $L_Name
+
+  - esc
+  - :qw 
+  - chmod u+x hellothere.sh 
+  - ./hellothere.sh (Just running the bash script written in the VIM text editor using the /bin/zsh interpreter)
+
+  -- Dynamic User input using variables 
+  -vim interactiveInput.sh
+  - i to open insert mode 
+
+
+  #!/bin/zsh
+
+  echo What is your first name?
+  read F_Name
+  echo What is your last name?
+  read L_Name
+
+  echo Hello $F_Name $L_Name
+
+  - esc
+  - :qw 
+  - chmod u+x interactiveInput.sh 
+  -./interactiveInput.sh
+
+
+ --- Positional Arguments --- 
+
+  -vim positionalArguments.sh 
+  - i 
+  #!/bin/zsh
+  echo Hello $1 $2 
+
+  N.B: (1 and 2 denoting position of the arguments)
+
+  - esc 
+  - :wq 
+  - chmod u+x positionalArguments.sh
+  -./positionalArguments Sajidur Rahman
+
+
+   ---Piping (It's the way of sending the output of a command before the pipe symbol to the command after the pipe symbol)
+
+   - > (for storing text in a file)
+   - >> (appending text in the file with previous text in the file)
+
+   -- < (input from files)
+
+   wc -w hello.txt (shows word count as well as the file name)
+   but if we type,
+   wc -w < hello.txt (It outputs the number of words in that text file)
+
+   --- cat << EOF
+   i will
+   write some
+   command here
+   EOF 
+   (It prints all the lines taken as inputs)
+   
+   --- Check <<< operator by yourself
+
+   -- Test operator ---
+   [ hello = hello ] 
+   echo $? ($? - denotes the exit code for the last line of the execution of code)
+
+   -in this case it returns 0 (As it evaluates the strings are same)
+
+   But if this was like, 
+
+   [ 1 = 0 ]
+
+   echo $?  (Returns 1 as they are not same)
+
+   We can also write
+   [ 1 -eq 1 ]
+   echo $?
+
+   --if elif else statement ([] -denotes test operator, ${1,,} is a parameter expansion in which we are checking whether the 1st positional argument is equal to a certain value.Allow us to ignore upper and lower case barriers)---
+
+   vim ifelifelse.sh
+
+  -i 
+  #!/bin/zsh
+
+if [ ${1,,} = Sajid ]; then
+   echo "You are the boss here!!"
+elif [ ${1,,} = help ]; then
+   echo "Just enter your username dude!!"
+else
+   echo "I don't know who you are!! Get out of here, buddy."
+
+ -esc
+ -:wq
+ -chmod u+x ifelifelse.sh 
+ - ./ifelifelse.sh Sajid
+
+---It works(GPT) ---
+ #!/bin/zsh
+
+if [ "${1:l}" = "sajid" ]; then
+   echo "You are the boss here!!"
+elif [ "${1:l}" = "help" ]; then
+   echo "Just enter your username dude!!"
+else
+   echo "I don't know who you are!! Get out of here, buddy."
+fi
+
+
+ ---Case Statement ---
+---Works in Bash ---
+ vim caseStatment.sh
+ i 
+ #!/bin/zsh
+
+case ${1,,} in
+              Sajid | adminstrator)
+                echo "You are the boss here.Welcome!"
+;;
+help) 
+    echo "Just enter your username, buddy!"
+;;
+
+*)
+   echo "Get out of here, buddy!"
+esac
+
+ -esc
+ -:wq 
+ -chmod u+x caseStatment.sh
+ - ./caseStatment.sh Sajid
+
+--- Works in zsh ---
+
+#!/bin/zsh
+
+case ${1:l} in
+    sajid | administrator)
+        echo "You are the boss here. Welcome!"
+        ;;
+    help)
+        echo "Just enter your username, buddy!"
+        ;;
+    *)
+        echo "Get out of here, buddy!"
+        ;;
+esac
+
+
+---Array---
+
+  My_First_List=(One Two Three Four Five)
+  echo $My_First_List (prints the whole list)
+  echo ${My_First_List[@]} (same as before)
+  echo ${My_First_List[0]} (Prints the first item in the list but in bash terminal)
+
+  ---For Loop---
+
+  for item in ${My_First_List[@]}; do echo -n $item | wc -c; done 
+
+  N:B : Here -n is given to ignore newlines otherwise it will also count the new line as well
+
+ ----Functions----
+ 
+ !#/bin/zsh
+
+showupTime(){
+        up=$(uptime -u | cut -c4-)
+        since=$(uptime -s)
+        cat << EOF
+
+------
+This machine has been up for ${up}
+It has been running since ${since}
+------
+EOF
+}
+showupTime
+
+
+but this is for bash terminal. In Mac -s,-u don't supports.
+
+#!/bin/zsh
+
+showupTime() {
+    up=$(uptime | awk -F'(,|up)' '{print $2}' | sed 's/^[ \t]*//')
+    since=$(who -b | awk '{print $3, $4}')
+    cat << EOF
+
+------
+This machine has been up for ${up}
+It has been running since ${since}
+------
+EOF
+}
+
+showupTime
+
+(This is supported in Mac)

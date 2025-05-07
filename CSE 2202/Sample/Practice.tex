@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ulem}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{xcolor}
+\graphicspath{{images/}}
+\usepackage{lipsum}
+%Basic Structure
+
+\title{My first Document}
+\author{Sajidur Rahman}
+\date{10 Dec,2023}
+
+\begin{document}
+\pagenumbering{roman}
+\section{Introduction:}
+\lipsum[2]
+\section{Practice:}
+Different topics
+
+%Font Selection
+\subsection{Font Selection:}
+{\it Sajid}\\
+\textbf{Sajidur}\break
+\underline{Sajid}\\
+\textcolor{orange}{Sajidur Rahman}\\
+\emph{Sajid}\\
+\textrm{Sajid} \textsf{Sajidur}\\
+\xout{Sajid}
+\sout{sajidur}
+\uwave{Sajid}
+
+%List Creating
+
+%Unordered List
+
+\subsection{Unordered List:}
+\begin{itemize}
+    \item {\bf Biriyani}
+    \item {\Large Coke}
+    \item Roast
+    \item Beef
+\end{itemize}
+
+%Ordered List
+
+\paragraph*{Ordered List}
+
+\begin{enumerate}
+    \item Biriyani
+    \item Soft Drinks
+          \begin{enumerate}[i]
+              \item Pepsi
+              \item Coca-Cola
+                    \begin{enumerate}[a]
+                        \item 1L
+                        \item 450 ml
+                        \item 250 ml
+                    \end{enumerate}
+              \item Mojo
+          \end{enumerate}
+    \item Roast
+    \item Beef
+\end{enumerate}
+
+\begin{enumerate}[{Problem(a):}]
+    \item This is first
+    \item This is second
+\end{enumerate}
+
+\end{document}
