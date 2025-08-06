@@ -1,0 +1,93 @@
+
+1. Can you briefly describe what Code Studio is and what services/products it offers?
+
+Ans: Code Studio is mainly a software-based company that fully focuses on mobile app and website development.
+Especially, new idea-based apps are developed here depending on user needs and unique ideas that are shared. Apart from this, digital marketing, video editing, and graphic design are also included.
+It was established in 2018, inspired by other friends. The first name was Code Art.
+
+2. Mission and Long-term Vision:
+There are currently 15 members working in this company. The CEO assured us and also added that he wants to operate his company fully remotely in the future and increase the team size.
+The CEO's main goal is to spread new ideas across the country to develop new innovations.
+
+3.Technology Used:
+
+Mobile App Development: Google Flutter (supports both Android and iOS)
+Website Development:
+
+	Frontend → React and Next.js
+
+	Backend → Node.js
+
+	Database → SQL, MySQL
+
+4. Total Employees:
+Currently, there are 15 employees.
+
+Soikat Bhai → CEO and Founder who handles most important tasks like marketing, accounting, and project handling.
+
+More than 50 projects are involved, but around 20 projects are running at a time in Code Studio.
+
+Different types of employees work here, especially full-stack developers are hired more.
+
+There are 2 UI/UX designers.
+
+There are 5 mobile app developers.
+
+Backend developers are 7 in number.
+
+5. Testing: Testing is done by clients, meaning the company helps the client fully to test the software. Follows the agile method.
+
+6. Only handles client projects, not other companies’ tasks.
+
+App Building Process:
+Customer Requirements → UI/UX Designer -> two path split-> 
+                         → Mobile App
+                         → Website->
+				   ->Fornt end
+				   ->Back end
+
+7. Communication Media with Team Members:
+Google Meet.
+
+8.Financial Management:
+The CEO handles it with great concern.
+
+9. Problems Faced:
+Sometimes clients don’t pay the cost of the product on time. On the other hand, some clients want the product earlier, which is not always possible as it is time-consuming. These are the problems faced by the CEO.
+
+10. Main Strength:
+The employees' technical experience.
+
+11. Path:
+Confident planning → Increased marketing → More actions performed → Increased product sales
+The company is always dynamic.
+
+12. Goal:
+Less investment → More benefit
+Focus on location, financial, and time freedom. The goal is to become a fully remote-based company.
+
+13. Challenge:
+Once, clients didn’t pay on time and employees didn’t work properly, so the company was fully stopped for 15 days. That was a big challenge.
+It was overcome technically through planning, such as removing some employees as well as clients who wouldn’t pay.
+
+14. Current Statement:
+The team is now fully manageable.
+
+15. What is the best and worst part of being a CEO?
+
+Best part: Can handle employees technically.
+
+Worst part: Sometimes deadlines are not followed.
+
+16. What does the CEO want to change? : The company website.
+
+
+Short  Questions:
+Do you believe Code Studio has the potential to expand internationally? Yes
+Is customer satisfaction the top priority at Code Studio? Yes
+Are you satisfied with the current growth rate of Code Studio? Yes
+Does Code Studio invest enough in employee training and development? Yes
+Is the current product delivery system at Code Studio fully optimized? No
+
+Let me know if you want a more formal version or a short summary for presentation/report use.
+ 
