@@ -1,0 +1,5 @@
+INT: int
+ID: a
+SEMI: ;
+ID: func
+Error: syntax error at line 2

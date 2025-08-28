@@ -1,0 +1,20 @@
+function -> FUNCTION
+isEven -> ID
+( -> LP
+n -> ID
+: -> COLON
+int -> INT_TYPE
+In line no 1, Inserting n with type INT_TYPE in symbol table.
+) -> RP
+begin -> BEG
+return -> RET
+n -> ID
+% -> MOD
+2.0 -> FLOAT_NUM
+== -> EQUAL
+0 -> INT_NUM
+In line no 3, Data type INT_TYPE is not matched with Data type REAL_TYPE.
+; -> SEMI
+end -> END
+In line no 4, Return type mismatch. Expected INT_TYPE but got UNDEF_TYPE.
+Parsing finished!

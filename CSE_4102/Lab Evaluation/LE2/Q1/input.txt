@@ -1,0 +1,4 @@
+function ADD (a as int, b as double) 
+{ 
+	return a + b; 
+}

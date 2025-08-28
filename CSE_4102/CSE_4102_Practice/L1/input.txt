@@ -1,0 +1,17 @@
+RUET CSE 17 
+CUET CSE 18 
+BUET EEE 19 
+
+University of Dhaka 
+University of Rajshahi 
+University of Chittagong 
+
+001-180 
+//Comment: will accept all inputs within range. 
+
+Series: 16 series to 20 series 
+Department_Codes: 00 to 10 
+Roll_Numbers: 001 to 180 
+Format: (Series)(Department_Codes)(Roll_Numbers) 
+Accepted Inputs: 1703010, 2000001 
+//Comment: will accept all the roll numbers within acceptable range.

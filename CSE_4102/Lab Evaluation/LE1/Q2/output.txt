@@ -1,0 +1,22 @@
+"RUET" -> UCODE
+"Session" -> STRING
+"-" -> HIPEN
+"2020" -> YEAR
+"Roll" -> STRING
+"#" -> HASH
+"101" -> ROLLNUM
+ "RUET" -> UCODE
+"Session" -> STRING
+"-" -> HIPEN
+"2019" -> YEAR
+"Roll" -> STRING
+"#" -> HASH
+"205" -> ROLLNUM
+ "RUET" -> UCODE
+"Session" -> STRING
+"-" -> HIPEN
+"2021" -> YEAR
+"Roll" -> STRING
+"#" -> HASH
+"310" -> ROLLNUM
+Parsing finished!

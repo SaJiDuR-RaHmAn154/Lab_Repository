@@ -1,0 +1,24 @@
+dim -> DIM
+i -> ID
+as -> AS
+integer -> INTEGER
+In line no 1, Inserting i with type INT_TYPE in symbol table.
+For -> FOR
+i -> ID
+= -> ASSIGN
+1 -> INT_NUM
+To -> TO
+9.9 -> FLOAT_NUM
+For -> FOR
+j -> ID
+= -> ASSIGN
+10 -> INT_NUM
+To -> TO
+20 -> INT_NUM
+Next -> NEXT
+j -> ID
+In line no 4, ID j is not declared.
+In line no 4, ID j is not declared.
+Next -> NEXT
+i -> ID
+Parsing finished!

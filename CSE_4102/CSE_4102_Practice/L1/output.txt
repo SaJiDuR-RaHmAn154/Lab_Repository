@@ -1,0 +1,55 @@
+"RUET" -> UCODE
+"CSE" -> DEPT
+"17" -> SERIES
+"CUET" -> UCODE
+"CSE" -> DEPT
+"18" -> SERIES
+"BUET" -> UCODE
+"EEE" -> DEPT
+"19" -> SERIES
+"University" -> UNI
+"of" -> OF
+"Dhaka" -> CITY
+"University" -> UNI
+"of" -> OF
+"Rajshahi" -> CITY
+"University" -> UNI
+"of" -> OF
+"Chittagong" -> CITY
+"001" -> ROLL
+"-" -> HIPEN
+"180" -> ROLL
+"Series" -> SRL
+":" -> COLON
+"16" -> SERIES
+"series" -> SRL
+"to" -> TO
+"20" -> SERIES
+"series" -> SRL
+"Department_Codes" -> DEPTCODESL
+":" -> COLON
+"00" -> DEPTCODE
+"to" -> TO
+"10" -> DEPTCODE
+"Roll_Numbers" -> RNL
+":" -> COLON
+"001" -> ROLL
+"to" -> TO
+"180" -> ROLL
+"Format" -> FORMAT
+":" -> COLON
+"(" -> LP
+"Series" -> SRL
+")" -> RP
+"(" -> LP
+"Department_Codes" -> DEPTCODESL
+")" -> RP
+"(" -> LP
+"Roll_Numbers" -> RNL
+")" -> RP
+"Accepted Inputs" -> ACCEPTEDL
+":" -> COLON
+"1703010" -> EXROLL
+"," -> COMMA
+"2000001" -> EXROLL
+Parsing finished!

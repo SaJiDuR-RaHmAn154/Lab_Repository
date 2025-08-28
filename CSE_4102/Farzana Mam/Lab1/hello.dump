@@ -1,0 +1,28 @@
+
+hello.o:	file format mach-o arm64
+
+Disassembly of section __TEXT,__text:
+
+0000000000000000 <ltmp0>:
+       0: d100c3ff     	sub	sp, sp, #0x30
+       4: a9027bfd     	stp	x29, x30, [sp, #0x20]
+       8: 910083fd     	add	x29, sp, #0x20
+       c: 52800148     	mov	w8, #0xa                ; =10
+      10: b81f83a8     	stur	w8, [x29, #-0x8]
+      14: 52800288     	mov	w8, #0x14               ; =20
+      18: b81f43a8     	stur	w8, [x29, #-0xc]
+      1c: b85f83a8     	ldur	w8, [x29, #-0x8]
+      20: b85f43a9     	ldur	w9, [x29, #-0xc]
+      24: 0b090108     	add	w8, w8, w9
+      28: b81fc3a8     	stur	w8, [x29, #-0x4]
+      2c: b85fc3a9     	ldur	w9, [x29, #-0x4]
+      30: aa0903e8     	mov	x8, x9
+      34: 910003e9     	mov	x9, sp
+      38: f9000128     	str	x8, [x9]
+      3c: 90000000     	adrp	x0, 0x0 <ltmp0>
+      40: 91000000     	add	x0, x0, #0x0
+      44: 94000000     	bl	0x44 <ltmp0+0x44>
+      48: 52800000     	mov	w0, #0x0                ; =0
+      4c: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+      50: 9100c3ff     	add	sp, sp, #0x30
+      54: d65f03c0     	ret

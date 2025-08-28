@@ -1,0 +1,25 @@
+float num = input("Enter a number: ")
+
+if num > 0:
+    print("Positive number")
+elif num == 0:
+    print("Zero")
+elif num == 0:
+    print("Zero")
+elif num == 0:
+    print("Zero")
+else:
+    print("Negative number")
+
+
+dim i as integer
+For i = 1 To 9
+    For j = 10 To 20
+        Next j
+    Next i
+
+
+function isEven(n : int)
+begin
+    return n % 2.0 == 0;
+end

@@ -1,0 +1,23 @@
+"function" -> FUNCTION
+"ADD" -> ID
+"(" -> LPAREN
+"a" -> ID
+"as" -> AS
+"int" -> INT
+In line no 1, Inserting a with type INT_TYPE in symbol table.
+"," -> COMMA
+"b" -> ID
+"as" -> AS
+"double" -> DOUBLE
+In line no 1, Inserting b with type REAL_TYPE in symbol table.
+")" -> RPAREN
+"{" -> LBRACE
+"return" -> RETURN
+"a" -> ID
+"+" -> ADDOP
+"b" -> ID
+In line no 3, Data type INT_TYPE is not matched with Data type REAL_TYPE.
+";" -> SEMI
+In line no 3, Function returns type UNDEF_TYPE.
+"}" -> RBRACE
+Parsing finished!

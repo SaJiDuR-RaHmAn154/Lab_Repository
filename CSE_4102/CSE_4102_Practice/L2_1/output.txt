@@ -1,0 +1,33 @@
+float -> FLOAT
+num -> ID
+= -> ASSIGN
+input -> INPUT
+( -> LP
+"Enter a number: " -> STRING
+) -> RP
+In line no 1, Inserting num with type REAL_TYPE in symbol table.
+if -> IF
+num -> ID
+> -> GT
+0 -> INT_NUM
+: -> COLON
+print -> PRINT
+( -> LP
+"Positive number" -> STRING
+) -> RP
+elif -> ELIF
+num -> ID
+== -> EQ
+0 -> INT_NUM
+: -> COLON
+print -> PRINT
+( -> LP
+"Zero" -> STRING
+) -> RP
+else -> ELSE
+: -> COLON
+print -> PRINT
+( -> LP
+"Negative number" -> STRING
+) -> RP
+Parsing finished!
