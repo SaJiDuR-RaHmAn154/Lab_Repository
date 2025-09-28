@@ -1,0 +1,26 @@
+=== Lab 5 Lexical, Syntax, and Semantic Analyzer ===
+Processing input...
+
+In line no 1, Inserting a with type INT_TYPE in symbol table.
+In line no 2, Inserting b with type INT_TYPE in symbol table.
+In line no 3, Integer constant: 5
+In line no 3, Assignment: a = expression of type INT_TYPE
+In line no 4, Variable reference: a (type INT_TYPE)
+In line no 4, Integer constant: 1
+In line no 4, Arithmetic operation: INT_TYPE + INT_TYPE = INT_TYPE
+In line no 4, Assignment: b = expression of type INT_TYPE
+Printing value of variable a
+
+=== Symbol Table Contents ===
+Variable Name		Type
+------------------------
+b              	INT_TYPE
+a              	INT_TYPE
+------------------------
+
+=== Analysis Summary ===
+✓ Lexical analysis completed
+✓ Syntax analysis completed
+✓ Semantic analysis completed
+✓ Symbol table operations completed
+Parsing finished successfully!
