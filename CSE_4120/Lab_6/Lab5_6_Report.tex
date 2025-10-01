@@ -165,9 +165,14 @@
 % Enhanced header and footer styling
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\textcolor{primaryblue}{\textbf{Lab 5: Iris Classification}}}
-\fancyhead[R]{\textcolor{secondaryblue}{\textbf{CSE 4120 - Data Mining Lab}}}
+\fancyhead[R]{\textcolor{primaryblue}{\textbf{Classification and Clustering Analysis}}}
+\fancyhead[L]{\textcolor{primaryblue}{\textbf{Data Mining Sessional}}}
 \fancyfoot[C]{\textcolor{darkgray}{\thepage}}
+% Footer setup - only page number
+\fancyfoot[C]{\textcolor{primaryblue}{\textbf{\thepage}}}
+    
+% No footer line
+\renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{2pt}
 \renewcommand{\footrulewidth}{1pt}
 \renewcommand{\headrule}{\hbox to\headwidth{%
@@ -239,15 +244,14 @@
 \newpage
 
 % ===================== INTRODUCTION =====================
-\section{Introduction and Objective}
+\section{ Lab-5: Classification Analysis }
 
-This comprehensive report presents the implementation and analysis of two fundamental machine learning classification algorithms: Decision Trees and Na\"{i}ve Bayes, applied to the renowned Iris dataset. The Iris dataset, introduced by British statistician and biologist Ronald Fisher in 1936, serves as a cornerstone benchmark in pattern recognition and machine learning education.
-
-The primary objective of this laboratory session is to develop practical expertise in supervised classification techniques through hands-on implementation and rigorous evaluation. This work encompasses dataset preparation, algorithm implementation, model training and testing, performance evaluation using cross-validation techniques, and comprehensive analysis of classification results including confusion matrix interpretation and precision-recall metrics assessment.
-
+\subsection{Introduction}
 The Iris dataset represents an ideal learning platform for classification algorithms due to its balanced structure, clear feature relationships, and well-defined class boundaries. Through systematic implementation of both Decision Trees and Na\"{i}ve Bayes approaches, this study provides valuable insights into the comparative effectiveness of rule-based versus probabilistic classification methodologies.
 
-\section{Dataset Overview and Characteristics}
+\subsection{Objective}
+The primary objective of this laboratory session is to develop practical expertise in supervised classification techniques through hands-on implementation and rigorous evaluation. This work encompasses dataset preparation, algorithm implementation, model training and testing, performance evaluation using cross-validation techniques, and comprehensive analysis of classification results including confusion matrix interpretation and precision-recall metrics assessment.
+\subsection{Dataset Characteristics}
 
 The Fisher's Iris dataset contains 150 carefully collected samples representing three distinct species of iris flowers: Iris Setosa, Iris Versicolor, and Iris Virginica. Each sample is characterized by four morphological measurements: sepal length, sepal width, petal length, and petal width, all recorded in centimeters with high precision.
 
@@ -256,9 +260,9 @@ This dataset exhibits several characteristics that make it particularly suitable
 The morphological features demonstrate varying degrees of discriminative power across the three iris species. Sepal and petal measurements provide complementary information about flower structure, with certain features showing stronger correlation with specific species classifications. This natural feature diversity allows for comprehensive evaluation of algorithm performance under different classification scenarios.
 
 % ===================== CLASSIFICATION USING DECISION TREES =====================
-\section{Classification using Decision Trees}
+\subsection{Classification using Decision Trees}
 
-\subsection{Dataset Loading and Preparation}
+\subsubsection{Dataset Loading and Preparation}
 
 \subsubsection{Implementation Approach}
 I loaded the Iris dataset using pandas to read the CSV file and prepared it for classification analysis. My approach involved importing essential libraries like pandas for data handling, numpy for numerical operations, matplotlib for visualization, and sklearn for machine learning tasks. I then examined the dataset structure, identified the target variable, and split the data into training and test sets.
@@ -280,23 +284,23 @@ print("Libraries imported successfully!")
 df = pd.read_csv('iris.csv')
 print("Loaded iris.csv successfully!")
 
-# Check data dimensions and types
+# Checking data dimensions and types
 print(f"Dataset dimensions: {df.shape}")
 print(f"Columns: {df.columns.tolist()}")
 print(f"Data types:")
 print(df.dtypes)
 
-# Examine potential label columns
+# Potential label columns
 print("First few rows:")
 print(df.head())
 print(f"\nPotential label column: {df.columns[-1]}")
 print(f"Unique values in label: {df[df.columns[-1]].unique()}")
 
-# Prepare features and target variable
+# Preparing features and target variable
 X = df.drop('variety', axis=1)
 y = df['variety']
 
-# Split data into training and test sets (80-20)
+# Splitting data into training and test sets (80-20)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 print(f"Training set: {X_train.shape[0]} samples")
@@ -307,20 +311,20 @@ print(f"Features: {X.columns.tolist()}")
 \subsubsection{Terminal Output}
 \begin{figure}[h!]
 \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Dataset loading and preparation results would appear here}}}
+    \includegraphics[width=0.95\textwidth]{Figures/loading.png}
     \caption{Dataset Loading and Preparation Results}
 \end{figure}
 
-\subsection{Train/Test a Decision Tree on a Labelled Dataset}
+\newpage 
+
+\subsubsection{Train/Test a Decision Tree on a Labelled Dataset}
 
 \subsubsection{Implementation Approach}
-I trained a decision tree classifier on the Iris dataset using the cleaned and prepared data with specific parameters to control overfitting. I built the model to predict iris species based on morphological features like sepal and petal measurements. My approach involved using DecisionTreeClassifier with max\_depth=5 to limit tree complexity, min\_samples\_split=10 to require minimum samples for splitting, and min\_samples\_leaf=5 to ensure sufficient samples in leaf nodes. I chose these parameters to balance model complexity and generalization ability while maintaining interpretability for the Iris dataset structure.
+I trained a decision tree classifier on the Iris dataset using the cleaned and prepared data with specific parameters to control overfitting. My approach involved using DecisionTreeClassifier with max\_depth=5 to limit tree complexity, min\_samples\_split=10 to require minimum samples for splitting, and min\_samples\_leaf=5 to ensure sufficient samples in leaf nodes. I chose these parameters to balance model complexity and generalization ability while maintaining interpretability for the Iris dataset structure.
 
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Train/Test a Decision Tree on a Labelled Dataset]
-# Create and train decision tree with specific parameters to control overfitting
-# max_depth limits tree depth, min_samples_split requires minimum samples to split
-# min_samples_leaf ensures minimum samples in leaf nodes for better generalization
+# Creating and training decision tree 
 dt_classifier = DecisionTreeClassifier(
     max_depth=5,
     min_samples_split=10,
@@ -329,14 +333,8 @@ dt_classifier = DecisionTreeClassifier(
 )
 dt_classifier.fit(X_train, y_train)
 
-# Generate predictions on test set using the trained decision tree model
-# Each prediction follows the learned decision rules based on feature thresholds
-y_pred_dt = dt_classifier.predict(X_test)
-
-# Evaluate classifier performance and display model parameters for transparency
-# Parameters help understand the constraints applied to prevent overfitting
-dt_accuracy = accuracy_score(y_test, y_pred_dt)
-print(f"Decision Tree Accuracy: {dt_accuracy:.4f}")
+# Printing decision tree stuffs
+print("Decision tree trained successfully!")
 print(f"Tree Parameters - Max Depth: {dt_classifier.max_depth}")
 print(f"Min Samples Split: {dt_classifier.min_samples_split}")
 print(f"Min Samples Leaf: {dt_classifier.min_samples_leaf}")
@@ -346,55 +344,57 @@ print(f"Min Samples Leaf: {dt_classifier.min_samples_leaf}")
 
 \begin{figure}[h!]
     \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Decision tree training results would appear here}}}
+    \includegraphics[width=0.85\textwidth]{Figures/training.png}
     \caption{Decision Tree Training and Testing Results}
 \end{figure}
 
-\subsection{Visualize the Tree and Compute Accuracy}
+\newpage
+\subsubsection{Visualize the Tree and Compute Accuracy}
 
 \subsubsection{Implementation Approach}
-I created a graphical visualization of the decision tree structure to understand the decision-making process and identify which features were most important for classification. I used sklearn's plot\_tree function with filled=True and rounded=True for better aesthetics, and specified class names and feature names for interpretability. This helped me understand which iris characteristics were most predictive of species classification.
+I built the model to predict iris species based on morphological features like sepal and petal measurements. I created a graphical visualization of the decision tree structure to understand the decision-making process and identify which features were most important for classification. I used sklearn's plot\_tree function with filled=True and rounded=True for better aesthetics, and specified class names and feature names for interpretability. This helped me understand which iris characteristics were most predictive of species classification.
 
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Visualize the Tree and Compute Accuracy]
+# Making predictions
+y_pred_dt = dt_classifier.predict(X_test)
+
 # Visualize the decision tree
-plt.figure(figsize=(15, 10))
+plt.figure(figsize=(12, 5))
 plot_tree(dt_classifier, feature_names=X.columns, class_names=dt_classifier.classes_, 
           filled=True, rounded=True, fontsize=10)
 plt.title('Decision Tree Visualization')
 plt.show()
 
+# Calculating accuracy
+dt_accuracy = accuracy_score(y_test, y_pred_dt)
+print(f"Decision Tree Accuracy: {dt_accuracy:.4f}")
 print(f"Tree depth: {dt_classifier.get_depth()}")
-print(f"Number of leaves: {dt_classifier.get_n_leaves()}")
 \end{lstlisting}
 
+\newpage
 \subsubsection{Terminal Output}
 
 \begin{figure}[h!]
     \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Decision tree visualization would appear here}}}
+    \includegraphics[width=\textwidth]{Figures/visualize.png}
     \caption{Decision Tree Structure Visualization}
     \label{fig:dt_structure}
 \end{figure}
 
-\subsection{Use K-Fold Cross-Validation (K=5)}
+\subsubsection{K-Fold Cross-Validation}
 
 \subsubsection{Implementation Approach}
 I applied K-Fold cross-validation with K=5 to evaluate the decision tree performance more robustly by testing the model on multiple different train-validation splits. My approach involved partitioning the training data into exactly 5 folds, training on 4 folds and validating on 1 fold iteratively. I chose K=5 specifically to balance between computational efficiency and reliable performance estimates while ensuring each fold contains sufficient samples for meaningful validation.
 
 \subsubsection{Implementation Code}
-\begin{lstlisting}[language=Python, caption=K-Fold Cross-Validation for Decision Tree (K=5)]
-# Import KFold for explicit K-Fold cross-validation with K=5
-# This ensures consistent fold creation with shuffle for randomization
+\begin{lstlisting}[language=Python, caption=K-Fold Cross-Validation for Decision Tree]
+# Performing K-Fold cross-validation with K=5
 from sklearn.model_selection import KFold
 kfold = KFold(n_splits=5, shuffle=True, random_state=42)
 
-# Perform K-Fold cross-validation with exactly 5 folds
-# Each iteration trains on 80% of data and validates on 20%
 cv_scores_dt = cross_val_score(dt_classifier, X_train, y_train, cv=kfold)
 
-# Display comprehensive K-Fold cross-validation results with fold-specific scores
-# Mean and standard deviation provide insights into model stability across folds
 print("Decision Tree K-Fold Cross-validation (K=5) scores:")
 print(f"Scores: {cv_scores_dt}")
 print(f"Mean: {cv_scores_dt.mean():.4f}")
@@ -406,45 +406,48 @@ print(f"Number of folds: {kfold.n_splits}")
 
 \begin{figure}[h!]
 \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Cross-validation results would appear here}}}
+     \includegraphics[width=\textwidth]{Figures/cross.png}
     \caption{Decision Tree Cross-Validation Results}
 \end{figure}
 
 % ===================== CLASSIFICATION USING NAIVE BAYES =====================
-\section{Classification using Na\"{i}ve Bayes}
+\subsection{Classification using Na\"{i}ve Bayes}
 
-\subsection{Use Na\"{i}ve Bayes to Classify Data}
+\subsubsection{Use Na\"{i}ve Bayes to Classify Data}
 
 \subsubsection{Implementation Approach}
 I implemented Gaussian Na\"{i}ve Bayes classifier for the numerical iris dataset. The algorithm assumes independence between features and uses Bayes' theorem for classification. My approach involved using GaussianNB from sklearn which is specifically designed for continuous features like the iris measurements. I chose this method because it handles numerical data well and provides probabilistic classifications that can be useful for understanding prediction confidence.
 
+\newpage
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Use Naive Bayes to Classify Data]
-# Create and train Naive Bayes classifier
+# Creating and training Naïve Bayes classifier
 nb_classifier = GaussianNB()
 nb_classifier.fit(X_train, y_train)
 
-# Make predictions
+# Making predictions
 y_pred_nb = nb_classifier.predict(X_test)
 
-# Calculate accuracy
+# Calculating accuracy
 nb_accuracy = accuracy_score(y_test, y_pred_nb)
-print(f"Naive Bayes Accuracy: {nb_accuracy:.4f}")
+print("Naïve Bayes trained successfully")
+print(f"Naïve Bayes Accuracy: {nb_accuracy:.4f}")
 \end{lstlisting}
 
 \subsubsection{Terminal Output}
 
 \begin{figure}[h!]
     \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Na\"{i}ve Bayes training results would appear here}}}
+    \includegraphics[width=\textwidth]{Figures/NBTrain.png}
     \caption{Na\"{i}ve Bayes Training and Testing Results}
 \end{figure}
 
-\subsection{Analyze Confusion Matrix, Precision, Recall}
+\subsubsection{Analyze Confusion Matrix, Precision, Recall}
 
 \subsubsection{Implementation Approach}
 I created confusion matrices and calculated precision and recall for both models to analyze classification performance in detail. My approach involved generating confusion matrices using sklearn's confusion\_matrix function and computing precision and recall scores with average='weighted' to account for class balance. I chose to analyze both models together to compare their performance characteristics and understand where each model makes classification errors.
 
+\newpage
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Analyze Confusion Matrix Precision Recall]
 # Confusion matrix for Decision Tree
@@ -457,7 +460,7 @@ cm_nb = confusion_matrix(y_test, y_pred_nb)
 print("\nNaive Bayes Confusion Matrix:")
 print(cm_nb)
 
-# Calculate precision and recall
+# Calculating precision and recall
 dt_precision = precision_score(y_test, y_pred_dt, average='weighted')
 dt_recall = recall_score(y_test, y_pred_dt, average='weighted')
 
@@ -472,42 +475,43 @@ print(f"Naive Bayes - Precision: {nb_precision:.4f}, Recall: {nb_recall:.4f}")
 
 \begin{figure}[h!]
     \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Confusion matrix analysis would appear here}}}
+    \includegraphics[width=0.6\textwidth]{Figures/cfmatrix.png}
     \caption{Confusion Matrix and Performance Metrics Analysis}
 \end{figure}
 
-\subsection{Apply Laplace Smoothing}
+\newpage
+\subsubsection{Apply Laplace Smoothing}
 
 \subsubsection{Implementation Approach}
 For Gaussian Na\"{i}ve Bayes, I demonstrated the concept of smoothing by adjusting the variance smoothing parameter. My approach involved creating a modified version of the Na\"{i}ve Bayes classifier with different smoothing parameters and comparing the results. I chose to use var\_smoothing parameter which adds a small value to variances to prevent numerical issues and improve generalization, similar to the concept of Laplace smoothing in discrete Na\"{i}ve Bayes.
 
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Apply Laplace Smoothing]
-# Apply smoothing to Naive Bayes
-nb_smoothed = GaussianNB(var_smoothing=1e-8)  # Smaller smoothing
+# Applying smoothing to Naïve Bayes
+nb_smoothed = GaussianNB(var_smoothing=1e-5)  # Smaller smoothing
 nb_smoothed.fit(X_train, y_train)
 y_pred_nb_smoothed = nb_smoothed.predict(X_test)
 
 nb_smoothed_accuracy = accuracy_score(y_test, y_pred_nb_smoothed)
-print(f"Naive Bayes with smoothing Accuracy: {nb_smoothed_accuracy:.4f}")
+print(f"Naïve Bayes with smoothing Accuracy: {nb_smoothed_accuracy:.4f}")
 
-# Compare with original
-print(f"Original Naive Bayes: {nb_accuracy:.4f}")
-print(f"Smoothed Naive Bayes: {nb_smoothed_accuracy:.4f}")
+# Comparing with original
+print(f"Original Naïve Bayes: {nb_accuracy:.4f}")
+print(f"Smoothed Naïve Bayes: {nb_smoothed_accuracy:.4f}")
 \end{lstlisting}
 
 \subsubsection{Terminal Output}
 
 \begin{figure}[h!]
     \centering
-    \fbox{\parbox{0.8\textwidth}{\centering \textit{Laplace smoothing results would appear here}}}
+    \includegraphics[width=\textwidth]{Figures/smoothing.png}
     \caption{Laplace Smoothing Results Comparison}
 \end{figure}
 
 % ===================== RESULTS AND COMPARISON =====================
-\section{Results and Performance Analysis}
+\subsection{Results and Performance Analysis}
 
-\subsection{Model Performance Comparison}
+\subsubsection{Model Performance Comparison}
 
 Both algorithms achieved excellent performance on the Iris dataset, demonstrating the effectiveness of these classification techniques on well-structured data.
 
@@ -526,7 +530,7 @@ Both algorithms achieved excellent performance on the Iris dataset, demonstratin
 \caption{Comprehensive Performance Metrics Comparison}
 \end{table}
 
-\subsection{Cross-Validation Analysis}
+\subsubsection{Cross-Validation Analysis}
 
 Cross-validation results showed consistent performance for both models, indicating good generalization ability and robust performance across different data splits.
 
@@ -544,71 +548,268 @@ Cross-validation results showed consistent performance for both models, indicati
 \caption{Cross-Validation Performance Summary}
 \end{table}
 
-\subsection{Confusion Matrix Analysis}
+\newpage
 
-Detailed examination of classification errors provides insights into model behavior:
+% ===================== CLUSTERING WITH K-MEANS AND HIERARCHICAL METHODS =====================
+\section{Lab-6: Clustering Analysis}
 
-\projecttitle{Decision Tree Confusion Matrix}
+\subsection{Introduction}
+Clustering analysis represents a fundamental unsupervised learning approach that identifies natural groupings within data without prior knowledge of class labels. This laboratory focuses on implementing and comparing two primary clustering methodologies: k-means clustering and hierarchical clustering, applied to the Wine dataset to discover inherent patterns in chemical composition data.
 
-\begin{table}[h!]
+\subsection{Objective}
+The primary objective of this laboratory session is to develop expertise in unsupervised clustering techniques through practical implementation and comprehensive evaluation. This work encompasses dataset preparation with outlier detection, algorithm implementation using k-means and hierarchical methods, cluster quality assessment using silhouette analysis, and visualization of clustering results using dimensionality reduction techniques.
+
+\subsection{Dataset Characteristics}
+The Wine dataset contains 178 samples representing three different wine cultivars from the same region in Italy. Each sample is characterized by 13 chemical properties including alcohol content, acidity levels, color intensity, and various chemical compounds. This dataset provides an excellent platform for clustering analysis due to its numerical features, natural groupings corresponding to wine cultivars, and sufficient sample size for robust clustering evaluation.
+
+The chemical features demonstrate varying degrees of discriminative power across wine types, with some attributes showing strong correlation with specific cultivars while others provide complementary information about wine composition. This feature diversity enables comprehensive evaluation of clustering algorithm performance under different data characteristics and validates the effectiveness of unsupervised learning approaches in identifying meaningful patterns.
+
+\subsection{Clustering Methods}
+
+\subsubsection{Dataset Loading and Preparation for Clustering}
+
+\subsubsection{Implementation Approach}
+I loaded the Wine dataset and prepared it for clustering analysis using k-means and hierarchical methods. My approach involved importing essential libraries, examining the dataset structure, standardizing features, removing outliers using Isolation Forest, and applying PCA for visualization.
+
+\subsubsection{Implementation Code}
+\begin{lstlisting}[language=Python, caption=Dataset Loading and Clustering Preparation]
+# Importing necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_wine
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from sklearn.decomposition import PCA
+from sklearn.ensemble import IsolationForest
+from scipy.cluster.hierarchy import dendrogram, linkage
+from scipy.cluster.hierarchy import fcluster
+
+print("Libraries imported successfully!")
+
+# Loading the Wine dataset
+wine_data = load_wine()
+X = wine_data.data
+y = wine_data.target
+feature_names = wine_data.feature_names
+
+print(f"Dataset loaded with {X.shape[0]} samples and {X.shape[1]} features")
+
+# Standardizing features for clustering
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Removing outliers using Isolation Forest
+outlier_detector = IsolationForest(contamination=0.1, random_state=42)
+outlier_labels = outlier_detector.fit_predict(X_scaled)
+X_clean = X_scaled[outlier_labels == 1]
+y_clean = y[outlier_labels == 1]
+
+print(f"Removed {np.sum(outlier_labels == -1)} outliers")
+print(f"Clean dataset: {X_clean.shape[0]} samples")
+
+# Applying PCA for visualization
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_clean)
+\end{lstlisting}
+
+\subsubsection{Terminal Output}
+\begin{figure}[h!]
 \centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\rowcolor{tableheader} & \textcolor{headertext}{\textbf{Setosa}} & \textcolor{headertext}{\textbf{Versicolor}} & \textcolor{headertext}{\textbf{Virginica}} \\
-\hline
-\tablealtrow \textbf{Setosa} & 10 & 0 & 0 \\
-\rowcolor{tablealt2} \textbf{Versicolor} & 0 & 9 & 1 \\
-\tablealtrow \textbf{Virginica} & 0 & 1 & 9 \\
-\hline
-\end{tabular}
-\caption{Decision Tree Confusion Matrix}
-\end{table}
+    \includegraphics[width=0.95\textwidth]{Figures/clustering_loading.png}
+    \caption{Dataset Loading and Preparation Results for Clustering}
+\end{figure}
 
-\projecttitle{Na\"{i}ve Bayes Confusion Matrix}
+\subsubsection{K-Means Clustering Implementation}
 
-\begin{table}[h!]
+\subsubsection{Implementation Approach}
+I applied k-means clustering with k=3 to identify natural groupings in the wine dataset after outlier removal.
+
+\subsubsection{Implementation Code}
+\begin{lstlisting}[language=Python, caption=K-Means Clustering Implementation]
+# Applying k-means clustering with k=3 on cleaned data
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+cluster_labels = kmeans.fit_predict(X_clean)
+
+print(f"K-means clustering completed with {len(np.unique(cluster_labels))} clusters")
+print(f"Cluster distribution: {np.bincount(cluster_labels)}")
+\end{lstlisting}
+
+\newpage
+\subsubsection{Terminal Output}
+\begin{figure}[h!]
 \centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\rowcolor{tableheader} & \textcolor{headertext}{\textbf{Setosa}} & \textcolor{headertext}{\textbf{Versicolor}} & \textcolor{headertext}{\textbf{Virginica}} \\
-\hline
-\tablealtrow \textbf{Setosa} & 10 & 0 & 0 \\
-\rowcolor{tablealt2} \textbf{Versicolor} & 0 & 10 & 0 \\
-\tablealtrow \textbf{Virginica} & 0 & 1 & 9 \\
-\hline
-\end{tabular}
-\caption{Na\"{i}ve Bayes Confusion Matrix}
-\end{table}
+    \includegraphics[width=0.95\textwidth]{Figures/kmeans_results.png}
+    \caption{K-Means Clustering Results}
+\end{figure}
+
+\subsubsection{Cluster Visualization}
+
+\subsubsection{Implementation Approach}
+I visualized clusters using the first two principal components to show cluster separation in PCA space.
+
+\subsubsection{Implementation Code}
+\begin{lstlisting}[language=Python, caption=Cluster Visualization in PCA Space]
+# Visualizing clusters using PCA components
+plt.figure(figsize=(10, 5))
+colors = ['red', 'blue', 'green']
+
+for i in range(3):
+    cluster_points = X_pca[cluster_labels == i]
+    plt.scatter(cluster_points[:, 0], cluster_points[:, 1], 
+               c=colors[i], label=f'Cluster {i}', alpha=0.7)
+
+# Plotting centroids in PCA space
+centroids_pca = pca.transform(kmeans.cluster_centers_)
+plt.scatter(centroids_pca[:, 0], centroids_pca[:, 1], c='black', marker='x', s=200, linewidths=3, label='Centroids')
+
+plt.xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.2f} variance)')
+plt.ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.2f} variance)')
+plt.title('K-Means Clustering Results (PCA Space)')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+\end{lstlisting}
+
+\newpage
+\subsubsection{Terminal Output}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.95\textwidth]{Figures/cluster_visualization.png}
+    \caption{K-Means Cluster Visualization in PCA Space}
+\end{figure}
+
+\subsubsection{Silhouette Score Evaluation}
+
+\subsubsection{Implementation Approach}
+I computed silhouette scores to evaluate clustering quality and tested different numbers of clusters to find optimal configuration.
+
+\subsubsection{Implementation Code}
+\begin{lstlisting}[language=Python, caption=Silhouette Score Analysis]
+# Calculating silhouette score for k=3
+silhouette_avg = silhouette_score(X_clean, cluster_labels)
+print(f"Silhouette Score for k=3: {silhouette_avg:.4f}")
+
+# Testing different values of k
+k_range = range(2, 8)
+silhouette_scores = []
+
+for k in k_range:
+    kmeans_temp = KMeans(n_clusters=k, random_state=42, n_init=10)
+    labels_temp = kmeans_temp.fit_predict(X_clean)
+    silhouette_avg_temp = silhouette_score(X_clean, labels_temp)
+    silhouette_scores.append(silhouette_avg_temp)
+
+# Plotting silhouette scores
+plt.figure(figsize=(8, 5))
+plt.plot(k_range, silhouette_scores, marker='o', linewidth=2, markersize=8)
+plt.xlabel('Number of Clusters (k)')
+plt.ylabel('Silhouette Score')
+plt.title('Silhouette Score vs Number of Clusters')
+plt.grid(True, alpha=0.3)
+plt.show()
+\end{lstlisting}
+
+\subsubsection{Terminal Output}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.95\textwidth]{Figures/silhouette_analysis.png}
+    \caption{Silhouette Score Analysis Results}
+\end{figure}
+
+\subsubsection{Hierarchical Clustering and Dendrogram}
+
+\subsubsection{Implementation Approach}
+I built hierarchical clusters using Ward linkage methods and created a dendrogram to visualize cluster relationships.
+
+\subsubsection{Implementation Code}
+\begin{lstlisting}[language=Python, caption=Hierarchical Clustering Implementation]
+# Performing hierarchical clustering on clean data
+linkage_matrix = linkage(X_clean, method='ward')
+
+# Creating dendrogram
+plt.figure(figsize=(10, 4))
+dendrogram(linkage_matrix, truncate_mode='level', p=5)
+plt.title('Hierarchical Clustering Dendrogram')
+plt.xlabel('Sample Index or Cluster Size')
+plt.ylabel('Distance')
+plt.show()
+
+# Extracting clusters from hierarchical clustering
+hierarchical_labels = fcluster(linkage_matrix, 3, criterion='maxclust')
+hierarchical_labels = hierarchical_labels - 1
+
+# Calculating silhouette score for hierarchical clustering
+hierarchical_silhouette = silhouette_score(X_clean, hierarchical_labels)
+print(f"Hierarchical clustering silhouette score: {hierarchical_silhouette:.4f}")
+print(f"Hierarchical cluster distribution: {np.bincount(hierarchical_labels)}")
+\end{lstlisting}
+
+\newpage
+\subsubsection{Terminal Output}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.95\textwidth]{Figures/dendrogram.png}
+    \caption{Hierarchical Clustering Dendrogram and Results}
+\end{figure}
+
+\subsubsection{Comparison of Clustering Methods}
+
+\subsubsection{Implementation Approach}
+I compared k-means and hierarchical clustering results to understand their differences using side-by-side visualization.
+
+\subsubsection{Implementation Code}
+\begin{lstlisting}[language=Python, caption=Clustering Methods Comparison]
+# Comparing clustering methods
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+
+# K-means visualization
+for i in range(3):
+    cluster_points = X_pca[cluster_labels == i]
+    ax1.scatter(cluster_points[:, 0], cluster_points[:, 1], 
+                c=colors[i], label=f'Cluster {i}', alpha=0.7)
+ax1.set_title('K-Means Clustering')
+ax1.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.2f} variance)')
+ax1.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.2f} variance)')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Hierarchical clustering visualization
+for i in range(3):
+    cluster_points = X_pca[hierarchical_labels == i]
+    ax2.scatter(cluster_points[:, 0], cluster_points[:, 1], 
+                c=colors[i], label=f'Cluster {i}', alpha=0.7)
+ax2.set_title('Hierarchical Clustering')
+ax2.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.2f} variance)')
+ax2.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.2f} variance)')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsubsection{Terminal Output}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.95\textwidth]{Figures/clustering_comparison.png}
+    \caption{Side-by-Side Comparison of Clustering Methods}
+\end{figure}
 
 % ===================== DISCUSSION AND CONCLUSION =====================
 \section{Discussion and Conclusion}
 
-Throughout this project, I worked with the Iris dataset to understand how classification algorithms can solve pattern recognition problems. I learned many important lessons while implementing Decision Trees and Na\"{i}ve Bayes classifiers with specific parameters and K-Fold cross-validation.
+This comprehensive laboratory work successfully demonstrated the practical application of both supervised and unsupervised learning techniques through systematic implementation and evaluation of machine learning algorithms on carefully selected datasets. The supervised learning component utilized the renowned Iris dataset to explore classification methodologies, while the unsupervised learning aspect employed the Wine dataset to investigate clustering approaches.
 
-When I started analyzing the data, I found that understanding the dataset structure was crucial for successful classification. The Iris dataset provided a perfect learning environment with its balanced classes and clear feature relationships. I discovered that both sepal and petal measurements contribute differently to species classification, with some features being more discriminative than others.
+In the classification analysis, both Decision Trees and Na\"{i}ve Bayes algorithms exhibited exceptional performance on the Iris dataset, validating their effectiveness for multi-class classification problems. The Decision Tree implementation, configured with specific parameters including maximum depth of 5, minimum samples split of 10, and minimum samples leaf of 5, achieved robust performance while maintaining excellent interpretability of the decision-making process. The Na\"{i}ve Bayes classifier demonstrated superior accuracy with efficient computational performance, leveraging probabilistic inference to achieve reliable predictions. The application of K-Fold cross-validation with five folds provided comprehensive performance assessment, confirming model stability across different data partitions and validating the generalization capability of both algorithms.
 
-I spent considerable time understanding how decision trees make classification decisions through recursive partitioning. The implementation with specific parameters (max\_depth=5, min\_samples\_split=10, min\_samples\_leaf=5) helped control overfitting and improve generalization. The tree visualization helped me see exactly how the algorithm splits the data based on feature values to separate different iris species. This interpretability is a major advantage of decision trees for understanding the classification process.
+The clustering analysis revealed the effectiveness of unsupervised learning techniques in discovering natural patterns within the Wine dataset. Through careful data preprocessing, including feature standardization and outlier removal using Isolation Forest, the clustering algorithms achieved improved performance and more meaningful results. K-means clustering attained a silhouette score of 0.3004, while hierarchical clustering with Ward linkage achieved 0.2942, both indicating well-separated cluster structures. The implementation of Principal Component Analysis for visualization effectively demonstrated cluster separation in reduced dimensional space, confirming the validity of the identified groupings.
 
-The Na\"{i}ve Bayes implementation taught me about probabilistic classification approaches. Despite the ``na\"{i}ve'' independence assumption between features, the algorithm performed remarkably well on this dataset. I learned that this assumption often works better in practice than theoretical considerations might suggest.
+Algorithm selection emerged as a critical factor determining project success, with each method offering distinct advantages suited to specific analytical requirements. Decision Trees provided intuitive decision rules and transparent classification logic, making them ideal for scenarios requiring interpretability. Na\"{i}ve Bayes offered computational efficiency and probabilistic outputs suitable for applications requiring prediction confidence measures. K-means clustering excelled in identifying compact, spherical clusters with balanced distributions, while hierarchical clustering provided valuable structural insights through dendrogram visualization, revealing the hierarchical relationships among data points.
 
-My K-Fold cross-validation work with K=5 provided robust performance estimates and helped me understand model stability. The consistent performance across the 5 folds indicated that both models generalize well to unseen data. This validation technique with exactly 5 folds proved essential for reliable performance assessment while balancing computational efficiency.
+The evaluation methodologies employed throughout this work demonstrated their essential role in comprehensive algorithm assessment. K-Fold cross-validation proved indispensable for reliable performance estimation in supervised learning, while silhouette analysis effectively determined optimal cluster configurations in unsupervised scenarios. The combination of multiple evaluation metrics, including accuracy, precision, recall, and silhouette scores, provided thorough understanding of algorithm behavior and performance characteristics.
 
-I faced some interesting challenges during this work. The decision tree parameters required careful tuning to prevent overfitting while maintaining good performance. The K-Fold cross-validation results helped me understand the model's true performance across different data partitions. The confusion matrix analysis revealed that most classification errors occurred between Versicolor and Virginica species, which makes biological sense given their morphological similarities.
-
-The Laplace smoothing experiment with Na\"{i}ve Bayes showed how regularization techniques can affect model performance, even when the impact is minimal on this particular dataset.
-
-This project successfully demonstrated the application of Decision Trees and Na\"{i}ve Bayes algorithms to the classic Iris classification problem. Both algorithms achieved excellent performance, with Na\"{i}ve Bayes slightly outperforming the Decision Tree. My main achievements include successfully loading and preprocessing the Iris dataset with 150 samples and 4 features, implementing Decision Tree with specific parameters for better control, applying K-Fold cross-validation with K=5 for robust evaluation, and training both classifiers with strong performance results.
-
-The results I obtained are valuable for understanding classification algorithm behavior. The Decision Tree with controlled parameters achieved good accuracy with excellent interpretability, while Na\"{i}ve Bayes reached high accuracy with efficient computational performance. K-Fold cross-validation with 5 folds confirmed the stability of both models across different data partitions.
-
-I learned that algorithm choice depends on specific requirements. Decision Trees with proper parameters provide excellent interpretability and intuitive decision rules, making them ideal when understanding the classification logic is important. Na\"{i}ve Bayes offers computational efficiency and probabilistic outputs, making it suitable when prediction confidence is needed.
-
-The confusion matrix analysis revealed that Setosa species is perfectly separable from the other two species, while some confusion exists between Versicolor and Virginica. This biological insight aligns with botanical knowledge about iris species relationships.
-
-Looking ahead, this work could be extended by exploring different parameter combinations for decision trees, investigating ensemble methods that combine multiple algorithms, or applying these methods with K-Fold cross-validation to larger and more complex botanical datasets.
-
-This project reinforced my understanding that successful machine learning requires not just algorithm implementation, but also careful parameter tuning, appropriate evaluation methods like K-Fold cross-validation, and thoughtful interpretation of results. The skills developed here will be valuable for future classification problems in various domains.
+This laboratory experience reinforced fundamental principles of successful machine learning implementation, emphasizing the importance of careful algorithm selection based on problem requirements, appropriate data preprocessing techniques, and comprehensive evaluation strategies. The practical skills developed through implementing both supervised classification and unsupervised clustering methodologies establish a solid foundation for addressing diverse machine learning challenges across various application domains.
 
 \end{document}
