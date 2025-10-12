@@ -1,0 +1,137 @@
+Netro Systems Limited - Comprehensive Company Overview and Industrial Attachment Insight
+
+Company Profile
+Netro Systems Limited is a leading global software development and technology innovation company headquartered at Level 6B, Silicon Tower, Hi-Tech Park, Rajshahi, Bangladesh. It also maintains an international office in Preston, Lancashire, United Kingdom. Established in 2019, the company focuses on delivering high-impact, user-centric, and scalable software solutions that cater to industries such as Education, Finance, Telecommunication, Healthcare, Logistics, and eCommerce. Within five years, Netro Syste...
+Leadership and Organizational Structure
+Netro Systems operates under a collaborative and agile structure designed to promote innovation and efficient communication across departments. Its leadership team comprises visionary professionals who guide the company’s technological evolution and international growth.
+Key Leadership Members:
+CEO – Asiq Mohammed: Visionary leader with experience in product innovation, responsible for overall company strategy and growth.
+CMO – Altamira Tripty: Oversees branding, communications, and digital marketing initiatives.
+COO – Sultan M.: Manages operational processes, project timelines, and quality assurance.
+CTO – Ahamed Lincon: Leads technical innovation, product development, and AI integrations.
+HR & Business Development Officer – Raihanul Islam: Responsible for talent acquisition, corporate relations, and organizational culture.
+The organizational structure follows a flat hierarchy with dedicated teams in Software Engineering, UI/UX Design, Product Management, Quality Assurance, Human Resources, and Marketing.
+
+Departmental Overview
+Software Development Department – Focuses on designing, coding, testing, and deploying web and mobile applications. Developers specialize in full-stack technologies such as Node.js, React, PHP, and Flutter, maintaining continuous integration using GitHub Actions.
+UI/UX Design Department – Dedicated to crafting intuitive user experiences using tools like Figma, Adobe XD, and Illustrator. The team emphasizes usability, accessibility, and design consistency.
+Product Management Department – Handles client communication, requirement gathering, agile sprint planning, and roadmap documentation using Trello and Jira.
+Quality Assurance Department – Conducts systematic testing using Jest, Cypress, and Postman to ensure product reliability and security.
+HR & Administration – Oversees onboarding, workplace well-being, team-building initiatives, and compliance with labor laws.
+Marketing & Communications – Manages brand image, digital campaigns, and content creation for both Netro Systems and its clients.
+
+Products and Services
+Netro Systems provides an extensive range of digital products and services that address modern business challenges.
+Products include:
+1. Smart Pathshala – School management and digital learning solution for EdTech institutions in Bangladesh.
+2. Trivialy – WordPress plugin that increases eCommerce conversion by 40% through gamified customer engagement.
+3. Telzen – eSIM and telecom management platform for international travelers.
+4. JazakAllah MMP – Islamic app for prayer management, mosque scheduling, and donation tracking.
+5. Dokani ERP – Enterprise solution for retail management and inventory automation.
+6. Rimozen AI – Generative AI suite for music, media, and content creation.
+7. Kids AI – AI parenting assistant offering tips and safety recommendations.
+8. Eventus – Event management and ticketing application for social gatherings.
+9. Pro AI – Productivity assistant integrating ChatGPT-like features for daily automation.
+10. Kronos AI – AI marketing automation and analytics platform.
+
+Services include:
+- Custom software development and MVP design (avg. $49/hour)
+- UI/UX research, design, and prototype creation (avg. $29/hour)
+- AI and Machine Learning solutions (custom LLMs and GPT integration)
+- Branding and content creation ($19/hour)
+- Cloud hosting and 24/7 server maintenance
+
+Technology Stack
+Netro Systems uses a diverse set of technologies to deliver robust and scalable solutions:
+Backend: Node.js, NestJS, PHP, Golang, Python, Ruby on Rails
+Frontend: React, Next.js, Vue.js, Angular
+Mobile Development: Flutter, React Native, Swift, Kotlin
+Database: MySQL, PostgreSQL, MongoDB, Firebase
+DevOps: AWS, Docker, GitHub Actions, Jenkins
+Testing & QA: Jest, Cypress, Postman, Mocha
+Design Tools: Figma, Adobe XD, Illustrator
+
+Table 1: Major Technologies Used
+Category | Tools/Frameworks | Primary Application
+Backend | Node.js, PHP, Golang | API design and server logic
+Frontend | React, Vue, Angular | Responsive UI, dynamic SPAs
+Mobile | Flutter, React Native | Cross-platform mobile apps
+Database | MySQL, PostgreSQL | Scalable data management
+DevOps | AWS, Docker | Continuous integration and deployment
+
+Key Projects Portfolio
+Netro Systems has completed more than 230 projects globally, serving clients across North America, Europe, and Asia. The following table summarizes some major projects:
+Project | Description | Industry | Country | Duration | Tech Stack | Outcome
+Smart Pathshala | School automation platform with admin-teacher-parent modules | EdTech | Bangladesh | 6 months | Node.js, React, React Native | Reduced manual paperwork by 90%
+Kanga | Booking platform for home and travel services | Service Automation | USA | 6 months | Laravel, React, React Native | Increased customer retention by 6x
+JazakAllah | Islamic app providing AI prayer and donation features | Lifestyle | Germany | 2 months | PHP, React, Flutter | Enhanced community engagement
+YooWifi | Telecom management solution for wireless internet users | Telecom | Singapore | 3 months | Node.js, React, React Native | Improved user connectivity
+NLC Fund | Loan automation system for US-based fintech | FinTech | USA | 4 months | Node.js, React, Next.js | Reduced processing time by 40%
+DreamPath | AI-based dream interpretation app | AI/Wellness | Global | N/A | ChatGPT-4 API | Achieved viral adoption in beta phase
+
+Achievements and Growth Metrics
+- 230+ projects successfully delivered
+- 119+ satisfied global clients across multiple continents
+- $70M+ in total client funding raised with Netro-built MVPs
+- 6x increase in user engagement after UX revamps
+- 8x mobile app user growth within first month post-launch
+- Rated 5.0 on Clutch, 4.5 on GoodFirms, and 5.0 on Trustpilot
+
+Workplace Environment and Culture
+Netro Systems fosters an inclusive, hybrid work environment that encourages creativity and innovation. Employees benefit from flexible hours, ergonomic setups, and continuous learning opportunities. The culture emphasizes respect, sustainability, and collaboration, empowering interns and employees alike.
+
+Ethical and Legal Practices
+Netro Systems adheres to strict ethical guidelines regarding intellectual property, data protection, and code transparency. All developers and interns sign NDAs to ensure client confidentiality. The company complies with GDPR for European projects and enforces licensed software use to maintain legal integrity.
+
+Sustainability and Social Responsibility
+Environmental sustainability is part of Netro’s operational philosophy. The company minimizes energy use through AWS cloud infrastructure and adopts paperless documentation. It supports community development by offering discounted solutions for educational institutions and NGOs.
+
+Internship Project Summary (Smart Pathshala)
+During the industrial attachment, the intern contributed to the Smart Pathshala project — an all-in-one educational management software used by schools across Bangladesh. The main objective was to improve the student attendance and billing system while enhancing the UX flow for parents.
+Problem: Manual processes in school management led to inefficiencies and human errors.
+Approach: Designed a dashboard in React for real-time updates, implemented backend API using Node.js and Express, and integrated Firebase for authentication.
+Solution Validation: The final system reduced administrative overhead by 70%, streamlined fee collection, and received positive feedback from pilot schools.
+
+Tools Applied During Attachment
+- Figma for wireframing and interface design
+- React for front-end module development
+- Node.js and Express for backend API construction
+- AWS for hosting and deployment
+- Jest for component testing
+
+Skills Gained
+Technical: Full-stack web development (MERN), Mobile app deployment, CI/CD configuration, API security, and AI integration.
+Soft Skills: Team collaboration, Agile development communication, client requirement analysis, and problem-solving under time constraints.
+
+Challenges and Solutions
+Challenge 1: Handling large user data synchronization in Smart Pathshala.
+Solution: Implemented WebSockets for real-time updates and Redis caching for faster performance.
+Challenge 2: Managing remote team communication.
+Solution: Used Slack and Trello for transparent progress tracking and accountability.
+
+Contributions to the Organization
+- Built a reusable component system for the React frontend, reducing redundancy.
+- Optimized backend response time by 30% through database indexing.
+- Created documentation for future interns on API integration best practices.
+
+Achievements During Internship
+- Recognized for implementing an efficient student attendance feature.
+- Received positive feedback from both CTO and QA team.
+- Contributed to a knowledge-sharing session on Agile workflows.
+
+Conclusion and Recommendations
+The attachment at Netro Systems offered invaluable real-world experience bridging academic theory with software engineering practice. It enhanced both technical and interpersonal skills, contributing to a deeper understanding of the professional software lifecycle.
+Recommendations:
+- For Netro Systems: Expand AI and research lab divisions.
+- For RUET: Introduce more practical AI and cloud computing courses.
+- For Future Interns: Strengthen Git, Agile, and documentation habits before internships.
+
+References
+1. Netro Systems Official Website - https://www.netrosystems.com
+2. Netro Systems Portfolio 2025
+3. Netro Systems LinkedIn Profile
+4. Facebook and DesignRush Company Pages
+
+Prepared by: [Your Name]
+Department of Computer Science and Engineering, RUET
+Date: October 2025

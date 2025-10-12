@@ -1,5 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
+% Use T1 font encoding for proper accented characters outside listings
+\usepackage[T1]{fontenc}
 \usepackage{array}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -9,6 +11,7 @@
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage{hyperref}
+\usepackage{minted}
 \usepackage{listings}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows,positioning,shadows}
@@ -228,7 +231,7 @@
         \large \textbf{Roll: 2003154} & \\
         \large \textbf{Section: C} & \\
         \large \textbf{Session: 2020-21} & \\
-        \large \textbf{Department: CSE} & \\
+        \large \textbf{Department:} & \\
         & \\
         \hline
     \end{tabular}
@@ -421,7 +424,7 @@ I implemented Gaussian Na\"{i}ve Bayes classifier for the numerical iris dataset
 \newpage
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Use Naive Bayes to Classify Data]
-# Creating and training Naïve Bayes classifier
+# Creating and training Naive Bayes classifier
 nb_classifier = GaussianNB()
 nb_classifier.fit(X_train, y_train)
 
@@ -430,8 +433,8 @@ y_pred_nb = nb_classifier.predict(X_test)
 
 # Calculating accuracy
 nb_accuracy = accuracy_score(y_test, y_pred_nb)
-print("Naïve Bayes trained successfully")
-print(f"Naïve Bayes Accuracy: {nb_accuracy:.4f}")
+print("Naive Bayes trained successfully")
+print(f"Naive Bayes Accuracy: {nb_accuracy:.4f}")
 \end{lstlisting}
 
 \subsubsection{Terminal Output}
@@ -487,17 +490,17 @@ For Gaussian Na\"{i}ve Bayes, I demonstrated the concept of smoothing by adjusti
 
 \subsubsection{Implementation Code}
 \begin{lstlisting}[language=Python, caption=Apply Laplace Smoothing]
-# Applying smoothing to Naïve Bayes
+# Applying smoothing to Naive Bayes
 nb_smoothed = GaussianNB(var_smoothing=1e-5)  # Smaller smoothing
 nb_smoothed.fit(X_train, y_train)
 y_pred_nb_smoothed = nb_smoothed.predict(X_test)
 
 nb_smoothed_accuracy = accuracy_score(y_test, y_pred_nb_smoothed)
-print(f"Naïve Bayes with smoothing Accuracy: {nb_smoothed_accuracy:.4f}")
+print(f"Naive Bayes with smoothing Accuracy: {nb_smoothed_accuracy:.4f}")
 
 # Comparing with original
-print(f"Original Naïve Bayes: {nb_accuracy:.4f}")
-print(f"Smoothed Naïve Bayes: {nb_smoothed_accuracy:.4f}")
+print(f"Original Naive Bayes: {nb_accuracy:.4f}")
+print(f"Smoothed Naive Bayes: {nb_smoothed_accuracy:.4f}")
 \end{lstlisting}
 
 \subsubsection{Terminal Output}
@@ -798,6 +801,7 @@ plt.show()
 \end{figure}
 
 % ===================== DISCUSSION AND CONCLUSION =====================
+
 \section{Discussion and Conclusion}
 
 This comprehensive laboratory work successfully demonstrated the practical application of both supervised and unsupervised learning techniques through systematic implementation and evaluation of machine learning algorithms on carefully selected datasets. The supervised learning component utilized the renowned Iris dataset to explore classification methodologies, while the unsupervised learning aspect employed the Wine dataset to investigate clustering approaches.
@@ -807,9 +811,5 @@ In the classification analysis, both Decision Trees and Na\"{i}ve Bayes algorith
 The clustering analysis revealed the effectiveness of unsupervised learning techniques in discovering natural patterns within the Wine dataset. Through careful data preprocessing, including feature standardization and outlier removal using Isolation Forest, the clustering algorithms achieved improved performance and more meaningful results. K-means clustering attained a silhouette score of 0.3004, while hierarchical clustering with Ward linkage achieved 0.2942, both indicating well-separated cluster structures. The implementation of Principal Component Analysis for visualization effectively demonstrated cluster separation in reduced dimensional space, confirming the validity of the identified groupings.
 
 Algorithm selection emerged as a critical factor determining project success, with each method offering distinct advantages suited to specific analytical requirements. Decision Trees provided intuitive decision rules and transparent classification logic, making them ideal for scenarios requiring interpretability. Na\"{i}ve Bayes offered computational efficiency and probabilistic outputs suitable for applications requiring prediction confidence measures. K-means clustering excelled in identifying compact, spherical clusters with balanced distributions, while hierarchical clustering provided valuable structural insights through dendrogram visualization, revealing the hierarchical relationships among data points.
-
-The evaluation methodologies employed throughout this work demonstrated their essential role in comprehensive algorithm assessment. K-Fold cross-validation proved indispensable for reliable performance estimation in supervised learning, while silhouette analysis effectively determined optimal cluster configurations in unsupervised scenarios. The combination of multiple evaluation metrics, including accuracy, precision, recall, and silhouette scores, provided thorough understanding of algorithm behavior and performance characteristics.
-
-This laboratory experience reinforced fundamental principles of successful machine learning implementation, emphasizing the importance of careful algorithm selection based on problem requirements, appropriate data preprocessing techniques, and comprehensive evaluation strategies. The practical skills developed through implementing both supervised classification and unsupervised clustering methodologies establish a solid foundation for addressing diverse machine learning challenges across various application domains.
 
 \end{document}

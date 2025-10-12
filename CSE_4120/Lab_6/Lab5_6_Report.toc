@@ -1,0 +1,67 @@
+\contentsline {section}{\numberline {1} Lab-5: Classification Analysis }{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Objective}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Dataset Characteristics}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Classification using Decision Trees}{4}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Dataset Loading and Preparation}{4}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Implementation Approach}{4}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.3}Implementation Code}{4}{subsubsection.1.4.3}%
+\contentsline {subsubsection}{\numberline {1.4.4}Terminal Output}{5}{subsubsection.1.4.4}%
+\contentsline {subsubsection}{\numberline {1.4.5}Train/Test a Decision Tree on a Labelled Dataset}{6}{subsubsection.1.4.5}%
+\contentsline {subsubsection}{\numberline {1.4.6}Implementation Approach}{6}{subsubsection.1.4.6}%
+\contentsline {subsubsection}{\numberline {1.4.7}Implementation Code}{6}{subsubsection.1.4.7}%
+\contentsline {subsubsection}{\numberline {1.4.8}Terminal Output}{6}{subsubsection.1.4.8}%
+\contentsline {subsubsection}{\numberline {1.4.9}Visualize the Tree and Compute Accuracy}{7}{subsubsection.1.4.9}%
+\contentsline {subsubsection}{\numberline {1.4.10}Implementation Approach}{7}{subsubsection.1.4.10}%
+\contentsline {subsubsection}{\numberline {1.4.11}Implementation Code}{7}{subsubsection.1.4.11}%
+\contentsline {subsubsection}{\numberline {1.4.12}Terminal Output}{8}{subsubsection.1.4.12}%
+\contentsline {subsubsection}{\numberline {1.4.13}K-Fold Cross-Validation}{8}{subsubsection.1.4.13}%
+\contentsline {subsubsection}{\numberline {1.4.14}Implementation Approach}{8}{subsubsection.1.4.14}%
+\contentsline {subsubsection}{\numberline {1.4.15}Implementation Code}{8}{subsubsection.1.4.15}%
+\contentsline {subsubsection}{\numberline {1.4.16}Terminal Output}{9}{subsubsection.1.4.16}%
+\contentsline {subsection}{\numberline {1.5}Classification using Na\"{i}ve Bayes}{9}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Use Na\"{i}ve Bayes to Classify Data}{9}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Implementation Approach}{9}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Implementation Code}{10}{subsubsection.1.5.3}%
+\contentsline {subsubsection}{\numberline {1.5.4}Terminal Output}{10}{subsubsection.1.5.4}%
+\contentsline {subsubsection}{\numberline {1.5.5}Analyze Confusion Matrix, Precision, Recall}{10}{subsubsection.1.5.5}%
+\contentsline {subsubsection}{\numberline {1.5.6}Implementation Approach}{10}{subsubsection.1.5.6}%
+\contentsline {subsubsection}{\numberline {1.5.7}Implementation Code}{11}{subsubsection.1.5.7}%
+\contentsline {subsubsection}{\numberline {1.5.8}Terminal Output}{11}{subsubsection.1.5.8}%
+\contentsline {subsubsection}{\numberline {1.5.9}Apply Laplace Smoothing}{12}{subsubsection.1.5.9}%
+\contentsline {subsubsection}{\numberline {1.5.10}Implementation Approach}{12}{subsubsection.1.5.10}%
+\contentsline {subsubsection}{\numberline {1.5.11}Implementation Code}{12}{subsubsection.1.5.11}%
+\contentsline {subsubsection}{\numberline {1.5.12}Terminal Output}{12}{subsubsection.1.5.12}%
+\contentsline {subsection}{\numberline {1.6}Results and Performance Analysis}{13}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Model Performance Comparison}{13}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Cross-Validation Analysis}{13}{subsubsection.1.6.2}%
+\contentsline {section}{\numberline {2}Lab-6: Clustering Analysis}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Objective}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Dataset Characteristics}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Clustering Methods}{14}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Dataset Loading and Preparation for Clustering}{15}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Implementation Approach}{15}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Implementation Code}{15}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Terminal Output}{16}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}K-Means Clustering Implementation}{16}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.6}Implementation Approach}{16}{subsubsection.2.4.6}%
+\contentsline {subsubsection}{\numberline {2.4.7}Implementation Code}{16}{subsubsection.2.4.7}%
+\contentsline {subsubsection}{\numberline {2.4.8}Terminal Output}{17}{subsubsection.2.4.8}%
+\contentsline {subsubsection}{\numberline {2.4.9}Cluster Visualization}{17}{subsubsection.2.4.9}%
+\contentsline {subsubsection}{\numberline {2.4.10}Implementation Approach}{17}{subsubsection.2.4.10}%
+\contentsline {subsubsection}{\numberline {2.4.11}Implementation Code}{17}{subsubsection.2.4.11}%
+\contentsline {subsubsection}{\numberline {2.4.12}Terminal Output}{18}{subsubsection.2.4.12}%
+\contentsline {subsubsection}{\numberline {2.4.13}Silhouette Score Evaluation}{18}{subsubsection.2.4.13}%
+\contentsline {subsubsection}{\numberline {2.4.14}Implementation Approach}{18}{subsubsection.2.4.14}%
+\contentsline {subsubsection}{\numberline {2.4.15}Implementation Code}{18}{subsubsection.2.4.15}%
+\contentsline {subsubsection}{\numberline {2.4.16}Terminal Output}{19}{subsubsection.2.4.16}%
+\contentsline {subsubsection}{\numberline {2.4.17}Hierarchical Clustering and Dendrogram}{20}{subsubsection.2.4.17}%
+\contentsline {subsubsection}{\numberline {2.4.18}Implementation Approach}{20}{subsubsection.2.4.18}%
+\contentsline {subsubsection}{\numberline {2.4.19}Implementation Code}{20}{subsubsection.2.4.19}%
+\contentsline {subsubsection}{\numberline {2.4.20}Terminal Output}{21}{subsubsection.2.4.20}%
+\contentsline {subsubsection}{\numberline {2.4.21}Comparison of Clustering Methods}{21}{subsubsection.2.4.21}%
+\contentsline {subsubsection}{\numberline {2.4.22}Implementation Approach}{21}{subsubsection.2.4.22}%
+\contentsline {subsubsection}{\numberline {2.4.23}Implementation Code}{21}{subsubsection.2.4.23}%
+\contentsline {subsubsection}{\numberline {2.4.24}Terminal Output}{22}{subsubsection.2.4.24}%
+\contentsline {section}{\numberline {3}Discussion and Conclusion}{23}{section.3}%

@@ -1,0 +1,102 @@
+\contentsline {chapter}{Declaration}{1}{chapter*.1}%
+\contentsline {chapter}{Acknowledgment}{2}{chapter*.2}%
+\contentsline {chapter}{Executive Summary}{3}{chapter*.3}%
+\contentsline {chapter}{List of Abbreviations}{7}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background of Industrial Attachment}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Importance in Achieving Engineering Program Outcomes}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objectives of the Attachment}{8}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Scope and Limitations}{9}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Methodology}{9}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Structure of the Report}{9}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Organization Overview}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Company Profile and Global Presence}{11}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Corporate Headquarters and Locations}{11}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Mission, Vision, and Core Values}{12}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Mission Statement}{12}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Vision Statement}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Core Values}{12}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Company Growth and Market Position}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Global Market Presence and Key Achievements}{13}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Organizational Structure and Leadership}{14}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Executive Leadership Team}{14}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Departmental Structure}{15}{subsection.2.4.2}%
+\contentsline {subsubsection}{Software Development Division}{15}{subsection.2.4.2}%
+\contentsline {subsubsection}{Design and User Experience Division}{15}{subsection.2.4.2}%
+\contentsline {subsubsection}{Quality Assurance and Testing}{15}{subsection.2.4.2}%
+\contentsline {subsubsection}{Support Functions}{15}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Departments and Functions}{16}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Comprehensive Service Portfolio}{17}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Core Services Provided By Netro Systems}{17}{subsection.2.6.1}%
+\contentsline {subsubsection}{Custom Software Development}{17}{subsection.2.6.1}%
+\contentsline {subsubsection}{Software as a Service (SaaS) Solutions}{17}{subsection.2.6.1}%
+\contentsline {subsubsection}{UI/UX Design Services}{17}{subsection.2.6.1}%
+\contentsline {subsubsection}{Artificial Intelligence Integration}{18}{subsection.2.6.1}%
+\contentsline {subsubsection}{Quality Assurance and Testing}{18}{subsection.2.6.1}%
+\contentsline {subsubsection}{Cloud Services and DevOps}{18}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Company Project Portfolio}{20}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}AI and Innovation Projects}{22}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Client Satisfaction and Quality Metrics}{23}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}Notable Achievements and Business Impact}{23}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Portfolio Statistics and Growth Metrics}{23}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Industry Recognition and Awards}{24}{subsection.2.8.2}%
+\contentsline {section}{\numberline {2.9}Workplace Safety and Environmental Policy}{25}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Project Work and Activities}{26}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Project Title and Description}{26}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Problem Identification \& Complexity Analysis}{27}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Literature Survey and Background}{27}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Problem-Solving Approach}{27}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Experiment/Design Methodology}{28}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Validation of Findings}{29}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Tools and Techniques}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Technology Stack and Engineering Tools}{30}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Programming Languages and Core Technologies}{30}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Frontend Development Frameworks and Libraries}{31}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Backend Technologies and Server Frameworks}{31}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Mobile Development Technologies}{31}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Database Management Systems}{31}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Development Tools and Environment}{32}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Testing and Quality Assurance Tools}{32}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Design and Prototyping Tools}{32}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Project Management and Collaboration}{32}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.10}Cloud Services and DevOps Tools}{33}{subsection.4.1.10}%
+\contentsline {section}{\numberline {4.2}Application in Solving Complex Problems}{33}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Limitations and Constraints}{34}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Simulation and Testing Tools}{34}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Societal, Health, Safety, Legal \& Cultural Considerations}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Workplace, Health and Safety Measures}{35}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Physical Work Environment}{35}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Work Culture and Environment}{36}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Remote Work Support}{36}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Legal Compliance in Engineering Activities}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Societal, Cultural Awareness in Solution Design}{38}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Cross-Cultural Design Considerations}{38}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Digital Divide and Accessibility}{38}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Environmental Sustainability Considerations}{39}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Case Examples from the Attachment Site}{39}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Professional Ethics \& Responsibilities}{40}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Ethical Issues Faced During the Attachment}{40}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Professional Codes of Ethics}{40}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Intellectual Property and Confidentiality}{41}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Ethical Decision-Making Examples}{41}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Skills Gained \& Lifelong Learning}{42}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Technical Skills Gained}{42}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Soft Skills Developed}{43}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Adaptation to New Technologies}{43}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Lifelong Learning Reflection}{43}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Challenges \& Solutions}{44}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Technical Challenges}{44}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Administrative and Organizational Issues}{45}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Lessons Learned}{45}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Contribution to the Organization}{46}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Tasks Performed}{46}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Suggestions for Improvement}{46}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Feedback from Supervisor}{47}{section.9.3}%
+\contentsline {chapter}{\numberline {10}Conclusion \& Recommendations}{48}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Summary of the Attachment}{48}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Recommendations}{48}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}For Netro Systems Limited}{48}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}For Dept CSE, RUET}{49}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}For Future Interns}{49}{subsection.10.2.3}%
+\contentsline {section}{\numberline {10.3}Final Reflection}{50}{section.10.3}%
+\contentsline {chapter}{Bibliography}{51}{chapter*.24}%
