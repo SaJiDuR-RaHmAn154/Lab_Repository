@@ -1,0 +1,75 @@
+\contentsline {section}{\numberline {1}Chapter 1: Introduction to Systems}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}What is a System?}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Code Studio Software Company}{2}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Services Offered}{2}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Vision and Mission}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Vision}{3}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Mission}{3}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}System Characteristics}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}System Components}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}System Type Analysis}{5}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Project Portfolio}{5}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}Project Portfolio Overview}{5}{subsubsection.1.7.1}%
+\contentsline {subsubsection}{\numberline {1.7.2}Developed Applications \& Websites - Detailed Portfolio}{6}{subsubsection.1.7.2}%
+\contentsline {subsubsection}{\numberline {1.7.3}Mobile Applications}{6}{subsubsection.1.7.3}%
+\contentsline {subsubsection}{\numberline {1.7.4}Web Applications \& Websites}{9}{subsubsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.8}Organizational Structure}{13}{subsection.1.8}%
+\contentsline {subsubsection}{\numberline {1.8.1}Code Studio Organizational Structure}{13}{subsubsection.1.8.1}%
+\contentsline {subsubsection}{\numberline {1.8.2}Detailed Organizational Hierarchy}{13}{subsubsection.1.8.2}%
+\contentsline {subsubsection}{\numberline {1.8.3}Communication and Workflow}{14}{subsubsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.9}Recommendations}{14}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Conclusion}{15}{subsection.1.10}%
+\contentsline {section}{\numberline {2}Chapter 2: SDLC}{16}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problem Identification}{16}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Payment and Cash Flow Issues}{16}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Project Management and Timeline Challenges}{16}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Operational and Growth Challenges}{16}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Automation and Process Efficiency Challenges}{16}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Proposed Solutions}{17}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Proposed Automation System Architecture}{18}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}System Requirements}{18}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.4}Automation System Feasibility Analysis}{20}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Technical Feasibility Assessment}{20}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Economic Feasibility Analysis}{20}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Operational Feasibility Evaluation}{21}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Schedule Feasibility Planning}{21}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Feasibility Conclusion}{22}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Recommendations}{22}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Conclusion}{23}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Chapter 3: Information Gathering}{24}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Information Gathering}{24}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Interview Methodology}{24}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Key Interview Questions and Answers}{24}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Interview Analysis}{26}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Organizational Strengths Assessment}{26}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Leadership and Management Analysis}{27}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Operational Challenges Identification}{27}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Information Integration}{28}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Business Model Analysis}{28}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Technology Infrastructure Assessment}{28}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Strategic Growth Framework}{28}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Recommendations}{29}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Financial Management and Payment System Enhancement}{29}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Process Optimization and System Enhancement}{29}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Remote Operations and Team Management}{30}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Digital Presence and Marketing Enhancement}{30}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Conclusion}{30}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Chapter 4: Structured Analysis}{32}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{32}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Existing System DFD}{32}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Context Diagram}{32}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Main System Processes}{33}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Project Management Sub-Processes}{35}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Development Workflow Sub-Processes}{36}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Deployment and Quality Assurance Sub-Processes}{37}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6}Analytics and Reporting Sub-Processes}{38}{subsubsection.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.7}Data Stores}{40}{subsubsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.3}Proposed System DFD}{40}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Automation DFD}{41}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Process Automation Workflow}{41}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Data Dictionary}{42}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Core Data Stores}{43}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Detailed Database Schema}{44}{subsubsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Decision Tree}{45}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Decision Table}{48}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Conclusion}{49}{subsection.4.7}%
