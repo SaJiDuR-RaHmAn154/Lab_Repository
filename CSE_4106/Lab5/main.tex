@@ -1,0 +1,753 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{array,geometry,graphicx,fancyhdr,amsmath,amsfonts,amssymb,color,hyperref,listings}
+\usepackage{booktabs,multirow,subcaption,titlesec,multicol,caption,colortbl,enumitem}
+\usepackage{float}  % For [H] option in figures
+
+% Remove chapter numbering from sections (make sections numbered as 1, 2, 3 instead of 0.1, 0.2, 0.3)
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% ===================== PROFESSIONAL COLOR SCHEME =====================
+% Define professional color palette
+\definecolor{primaryblue}{RGB}{0,82,165}        % Deep professional blue
+\definecolor{secondaryblue}{RGB}{25,118,210}    % Medium blue 
+\definecolor{accentblue}{RGB}{100,181,246}      % Light blue accent
+\definecolor{lightblue}{RGB}{173,216,230}       % Light blue for backgrounds
+\definecolor{darkgray}{RGB}{66,66,66}           % Professional dark gray
+\definecolor{mediumgray}{RGB}{117,117,117}      % Medium gray
+\definecolor{lightgray}{RGB}{238,238,238}       % Light gray for backgrounds
+
+% Table color definitions
+\definecolor{tableheader}{RGB}{0,82,165}         % Primary blue for headers
+\definecolor{tablebody}{RGB}{240,248,255}        % Very light blue
+\definecolor{tableaccent}{RGB}{25,118,210}       % Secondary blue accent
+\definecolor{tableborder}{RGB}{0,82,165}         % Primary blue border
+\definecolor{headertext}{RGB}{255,255,255}       % White text for headers
+\definecolor{bodytext}{RGB}{66,66,66}            % Dark gray text
+\definecolor{tablealt1}{RGB}{248,251,255}        % Alternating row color 1
+\definecolor{tablealt2}{RGB}{235,245,251}        % Alternating row color 2
+
+% Subtle highlight colors
+\definecolor{techcolor}{RGB}{41,128,185}         % Subtle blue for technologies
+\definecolor{companycolor}{RGB}{156,39,176}      % Subtle purple for company names
+\definecolor{projectcolor}{RGB}{142,68,173}      % Subtle purple for project names
+\definecolor{skillcolor}{RGB}{211,84,0}          % Orange for skills/features
+\definecolor{toolcolor}{RGB}{52,152,219}         % Light blue for tools
+\definecolor{featurecolor}{RGB}{230,126,34}      % Orange for features/highlights
+\definecolor{impactcolor}{RGB}{192,57,43}        % Deep red for business impact
+
+% Table styling commands
+\newcommand{\tableheaderrow}{\rowcolor{tableheader}}
+\newcommand{\tablealtrow}{\rowcolor{tablealt1}}
+\newcommand{\tablealtrowtwo}{\rowcolor{tablealt2}}
+\setlength{\arrayrulewidth}{1.2pt}
+
+% Highlight macros
+\newcommand{\tech}[1]{\textcolor{techcolor}{\textbf{#1}}}
+\newcommand{\company}[1]{\textcolor{companycolor}{\textbf{#1}}}
+\newcommand{\project}[1]{\textcolor{projectcolor}{\textbf{#1}}}
+\newcommand{\skill}[1]{\textcolor{skillcolor}{\textbf{#1}}}
+\newcommand{\tool}[1]{\textcolor{toolcolor}{\textbf{#1}}}
+\newcommand{\feature}[1]{\textcolor{featurecolor}{\textbf{#1}}}
+\newcommand{\impact}[1]{\textcolor{impactcolor}{\textbf{#1}}}
+
+% Colored itemize environments
+\newenvironment{coloritemize}
+{\begin{itemize}[label=\textcolor{primaryblue}{$\bullet$}]}
+{\end{itemize}}
+\newenvironment{techitemize}
+{\begin{itemize}[label=\textcolor{techcolor}{$\blacksquare$}]}
+{\end{itemize}}
+\newenvironment{projectitemize}
+{\begin{itemize}[label=\textcolor{projectcolor}{$\diamond$}]}
+{\end{itemize}}
+
+% Caption styling
+\captionsetup{
+    font={bf,small},
+    textfont={color=bodytext},
+    labelfont={color=primaryblue, bf},
+    justification=centering,
+    singlelinecheck=false,
+    labelsep=period,
+    skip=10pt,
+    position=bottom
+}
+\captionsetup[sub]{
+    font={bf,footnotesize},
+    textfont={color=bodytext},
+    labelfont={color=secondaryblue, bf},
+    justification=centering,
+    singlelinecheck=false,
+    labelsep=period,
+    skip=8pt
+}
+
+% Hyperref colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    filecolor=secondaryblue,      
+    urlcolor=accentblue,
+    pdftitle={Industrial Attachment Report},
+    pdfauthor={Sajidur Rahman Tarafder},
+    pdfsubject={Industrial Attachment Report - Netro Systems}
+}
+
+% Code listings styling
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{lightgray},
+    frame=leftline,
+    framerule=3pt,
+    rulecolor=\color{primaryblue},
+    breaklines=true,
+    captionpos=b,
+    numbers=left,
+    numberstyle=\tiny\color{darkgray}\bfseries,
+    stepnumber=1,
+    numbersep=12pt,
+    keywordstyle=\color{primaryblue}\bfseries,
+    commentstyle=\color{mediumgray}\itshape,
+    stringstyle=\color{secondaryblue},
+    emphstyle=\color{accentblue}\bfseries,
+    showstringspaces=false,
+    tabsize=2,
+    xleftmargin=20pt,
+    framexleftmargin=15pt
+}
+
+% Chapter, section formatting
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{primaryblue}}
+  {\colorbox{primaryblue}{\textcolor{white}{\chaptertitlename\ \thechapter}}}{20pt}
+  {\Huge\color{primaryblue}}
+  [\vspace{5pt}{\centering\color{primaryblue}\titlerule[2pt]}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\titleformat{\section}[hang]
+  {\normalfont\Large\bfseries\color{primaryblue}}
+  {\colorbox{primaryblue}{\textcolor{white}{\makebox[2em]{\thesection}}}}{0.5em}
+  {\color{primaryblue}}
+  [\vspace{3pt}{\color{primaryblue}\titlerule[1.5pt]}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}[hang]
+  {\normalfont\large\bfseries\color{secondaryblue}}
+  {\colorbox{secondaryblue}{\textcolor{white}{\makebox[2.5em]{\thesubsection}}}}{0.5em}
+  {\color{secondaryblue}}
+  [\vspace{2pt}{\color{secondaryblue}\titlerule[1pt]}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleformat{\subsubsection}[hang]
+  {\normalfont\normalsize\bfseries\color{accentblue}}
+  {\colorbox{accentblue}{\textcolor{white}{\makebox[3em]{\thesubsubsection}}}}{0.5em}
+  {\color{accentblue}}
+  [\vspace{1pt}{\color{accentblue}\titlerule[0.8pt]}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% Custom titlepage formatting
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=25pt,
+    headsep=20pt,
+    footskip=20pt,
+    includeheadfoot
+}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{primaryblue}{\textbf{CSE 4106: Digital Image Processing Sessional}}}
+\fancyhead[R]{\textcolor{primaryblue}{\textbf{Lab 5: Spatial Filtering}}}
+\fancyfoot[C]{\textcolor{primaryblue}{\textbf{\thepage}}}
+\fancyfoot[C]{\textcolor{primaryblue}{\textbf{\thepage}}}
+\renewcommand{\contentsname}{\textcolor{primaryblue}{Table of Contents}}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+    \color{primaryblue}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{%
+    \color{lightgray}\leaders\hrule height \footrulewidth\hfill}}
+
+% Redefine plain page style to use primary blue page numbers
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[C]{\textcolor{primaryblue}{\textbf{\thepage}}}%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ===================== DOCUMENT START =====================
+\begin{document}
+
+% ===================== COVER PAGE =====================
+\begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{0.5cm}
+    {\large \textbf{"Heaven's Light is Our Guide"}}\\[0.3cm]
+    \includegraphics[width=4cm]{ruet_logo.png}\\[0.4cm]
+    {\Large \textbf{Department of Computer Science \& Engineering}}\\[0.3cm]
+    {\large \textbf{Rajshahi University of Engineering \& Technology}}\\[0.8cm]
+    {\LARGE \textbf{Lab Report-4}}\\[0.5cm]
+    {\LARGE \textbf{Digital Image Processing Sessional}}\\[0.5cm]
+    {\LARGE \textbf{Course Code: CSE 4106}}\\[0.3cm]
+
+    \vspace{0.8cm}
+    \begin{table}[h!]
+    \centering
+    \setlength{\arrayrulewidth}{1.5pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|p{8.5cm}|p{6.5cm}|}
+        \hline
+        \multicolumn{1}{|c|}{\large \textbf{Submitted By:}} & \multicolumn{1}{c|}{\large \textbf{Submitted To:}} \\
+        \hline
+        & \\
+        \large \textbf{Name: Sajidur Rahman Tarafder} & \multirow{5}{*}{\parbox{6.5cm}{\centering 
+        \large \textbf{Khaled Zinnurine}\\
+        \vspace{0.2cm}
+        \large \textbf{Lecturer}\\
+        \vspace{0.2cm}
+        \large \textbf{Department of CSE, RUET}}}\\
+        \large \textbf{Roll: 2003154} & \\
+        \large \textbf{Section: C} & \\
+        \large \textbf{Session: 2020-21} & \\
+        \large \textbf{Department: CSE} & \\
+        & \\
+        \hline
+    \end{tabular}
+    \end{table}
+\end{titlepage}
+
+% ===================== TABLE OF CONTENTS =====================
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+
+% ===================== EXPERIMENT TITLE =====================
+\section*{\LARGE Spatial Filtering and Edge Detection}
+\addcontentsline{toc}{section}{Spatial Filtering and Edge Detection}
+\textbf{Topic:} Implementation of various image filters including smoothing filters (Box, Weighted Average, Median), morphological filters (Min/Max), edge detection (Sobel), and sharpening filters (Laplacian, Unsharp Masking, High-Boost) using Python (NumPy/Matplotlib).
+
+
+% ===================== SHARED UTILITIES (from notebook) =====================
+\section*{Shared Utilities}
+\addcontentsline{toc}{section}{Helper Functions}
+
+% Reset section counter so Problem (a) starts from 1
+\setcounter{section}{0}
+
+\subsection*{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Padding and Convolution Utilities}]
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+def pad_image(img, pad_y, pad_x, mode='replicate'):
+    h,w = img.shape
+    H = h + 2*pad_y
+    W = w + 2*pad_x
+    out = np.zeros((H,W), dtype=img.dtype)
+    out[pad_y:pad_y+h, pad_x:pad_x+w] = img
+    if mode == 'replicate':
+        out[:pad_y, pad_x:pad_x+w] = img[0:1,:]
+        out[pad_y+h:, pad_x:pad_x+w] = img[-1:,:]
+        out[:, :pad_x] = out[:, pad_x:pad_x+1]
+        out[:, pad_x+w:] = out[:, pad_x+w-1:pad_x+w]
+    elif mode == 'zero':
+        pass
+    return out
+
+def convolution(img, kernel):
+    ky, kx = kernel.shape
+    py, px = ky//2, kx//2
+    pimg = pad_image(img, py, px, mode='replicate')
+    out = np.zeros_like(img, dtype=np.float32)
+    h,w = img.shape
+    for y in range(h):
+        for x in range(w):
+            region = pimg[y:y+ky, x:x+kx]
+            out[y,x] = np.sum(region * kernel)
+    return np.clip(out, 0, 255).astype(img.dtype)
+\end{lstlisting}
+
+\subsection*{Implementation Approach}
+First, I created two helper functions that all filters will use. The \texttt{pad\_image} function adds extra pixels around the image borders by copying the edge pixels. This prevents dark borders from appearing when we apply filters. The \texttt{convolution} function is the heart of spatial filtering - it slides a small kernel (like a \(3\times3\) window) across the entire image, multiplies the kernel values with the pixel values underneath, adds them all up, and stores the result. I made sure to clip the final values between 0 and 255 so we don't get invalid pixel intensities.
+
+% ===================== PROBLEM (a): Mean (Box) Filter =====================
+\section{Problem (a): Mean (Box) Filter}
+\textbf{Objective:} \textit{Smooth the image using a \(3\times 3\) average kernel.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Mean (Box) Filter}]
+def box_filter(img):
+    kernel = np.array([[1,1,1],
+                       [1,1,1],
+                       [1,1,1]], dtype=np.float32) / 9.0
+    return convolution(img, kernel)
+
+box_result = box_filter(img)
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+The box filter is the simplest smoothing filter. I created a \(3\times 3\) kernel where each element is \(1/9\). When we apply this to the image, each pixel becomes the average of itself and its 8 neighbors. This smooths out noise nicely, but it also blurs the entire image including edges. The filter is normalized (all values add up to 1) so the image doesn't become darker or brighter overall.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/box_vs_original.png}
+\caption{Original vs. Box Filtered Output}
+\end{figure}
+
+% ===================== PROBLEM (b): Weighted Average Filter =====================
+\section{Problem (b): Weighted Average Filter}
+\textbf{Objective:} \textit{Apply a separable weighted average that emphasizes the center.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Weighted Average Filter (1-2-1 Kernel)}]
+# Weighted Average Filter
+def weighted_average_filter(img):
+    kernel = np.array([[1,2,1],
+                       [2,4,2],
+                       [1,2,1]], dtype=np.float32) / 16.0
+    return convolution(img, kernel)
+
+weighted_result = weighted_average_filter(img)
+
+# Display original and filtered result
+plt.figure(figsize=(12,5))
+plt.subplot(1,2,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,2,2)
+plt.imshow(weighted_result, cmap='gray')
+plt.title('Weighted Average Filter')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+The weighted average filter is smarter than the box filter. Instead of treating all neighbors equally, it gives different weights to different positions. The center pixel gets the highest weight (4), the pixels directly above, below, left, and right get medium weight (2), and the diagonal corners get the lowest weight (1). After dividing by 16 (the sum of all weights), this creates a smoother blur that looks more natural and preserves edges better than the box filter. It's similar to a Gaussian blur but easier to compute.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/weighted_vs_original.png}
+\caption{Original vs. Weighted Average Filter Output}
+\end{figure}
+
+% ===================== PROBLEM (c): Median Filter =====================
+\section{Problem (c): Median Filter}
+\textbf{Objective:} \textit{Remove salt-and-pepper noise while preserving edges.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Median Filter (3x3)}]
+# Median Filter
+def median_filter(img):
+    padded = pad_image(img, 1, 1, mode='replicate')
+    h,w = img.shape
+    out = np.zeros_like(img)
+    for y in range(h):
+        for x in range(w):
+            region = padded[y:y+3, x:x+3].flatten()
+            region.sort()
+            out[y,x] = region[4]  # median of 9 values
+    return out
+
+median_result = median_filter(img)
+
+# Display results
+plt.figure(figsize=(12,5))
+plt.subplot(1,2,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,2,2)
+plt.imshow(median_result, cmap='gray')
+plt.title('Median Filter')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+The median filter works differently from averaging filters - instead of calculating the mean, it picks the middle value. For each pixel, I look at its \(3\times 3\) neighborhood (9 pixels total), sort them from smallest to largest, and pick the 5th value (the middle one). This is excellent for removing salt-and-pepper noise (those random black and white dots you sometimes see in images) because it ignores extreme values. Unlike blur filters, it keeps edges sharp because it doesn't blend values together.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/median_noise_removal.png}
+\caption{Median Filter on Salt-and-Pepper Noise}
+\end{figure}
+
+% ===================== PROBLEM (d): Min and Max Filters =====================
+\section{Problem (d): Min and Max Filters}
+\textbf{Objective:} \textit{Demonstrate nonlinear rank filtering for erosion-like and dilation-like effects.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Min and Max Filters}]
+# Min Filter
+def min_filter(img):
+    padded = pad_image(img, 1, 1, mode='replicate')
+    h,w = img.shape
+    out = np.zeros_like(img)
+    for y in range(h):
+        for x in range(w):
+            region = padded[y:y+3, x:x+3]
+            out[y,x] = np.min(region)
+    return out
+
+# Max Filter
+def max_filter(img):
+    padded = pad_image(img, 1, 1, mode='replicate')
+    h,w = img.shape
+    out = np.zeros_like(img)
+    for y in range(h):
+        for x in range(w):
+            region = padded[y:y+3, x:x+3]
+            out[y,x] = np.max(region)
+    return out
+
+min_result = min_filter(img)
+max_result = max_filter(img)
+
+# Display results
+plt.figure(figsize=(15,5))
+plt.subplot(1,3,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,3,2)
+plt.imshow(min_result, cmap='gray')
+plt.title('Min Filter')
+plt.axis('off')
+
+plt.subplot(1,3,3)
+plt.imshow(max_result, cmap='gray')
+plt.title('Max Filter')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Min and Max filters are simple but useful morphological operations. The Min filter replaces each pixel with the darkest pixel in its \(3\times 3\) neighborhood. This makes the image darker overall and shrinks bright objects while expanding dark regions - great for removing bright "pepper" noise. The Max filter does the opposite, replacing each pixel with the brightest neighbor. This makes bright objects bigger and removes dark "salt" noise. They're like erosion and dilation operations you might learn about in morphology.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/min_max_effects.png}
+\caption{Effects of Min and Max Filters}
+\end{figure}
+
+% ===================== PROBLEM (e): Laplacian Filter =====================
+\section{Problem (e): Laplacian Filter}
+\textbf{Objective:} \textit{Detect rapid intensity changes via second-order derivatives.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Laplacian Filtering - Negative Kernel}]
+# Laplacian with Negative Center
+def laplacian_filter(img):
+    kernel = np.array([[0,  1, 0],
+                       [1, -4, 1],
+                       [0,  1, 0]], dtype=np.float32)
+    return convolution(img, kernel)
+
+lap_result = laplacian_filter(img)
+sharpened = img - lap_result  # subtract to sharpen
+
+# Display results
+plt.figure(figsize=(15,5))
+plt.subplot(1,3,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,3,2)
+plt.imshow(lap_result, cmap='gray')
+plt.title('Laplacian Response (Negative)')
+plt.axis('off')
+
+plt.subplot(1,3,3)
+plt.imshow(sharpened, cmap='gray')
+plt.title('Sharpened (Original - Laplacian)')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption={Laplacian Filtering - Positive Kernel}]
+# Laplacian with Positive Center
+def laplacian_filter(img):
+    kernel = np.array([[ 0, -1,  0],
+                       [-1,  4, -1],
+                       [ 0, -1,  0]], dtype=np.float32)
+    return convolution(img, kernel)
+
+lap_result = laplacian_filter(img)
+sharpened = img + lap_result  # add to sharpen
+
+# Display results
+plt.figure(figsize=(15,5))
+plt.subplot(1,3,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,3,2)
+plt.imshow(lap_result, cmap='gray')
+plt.title('Laplacian Response (Positive)')
+plt.axis('off')
+
+plt.subplot(1,3,3)
+plt.imshow(sharpened, cmap='gray')
+plt.title('Sharpened (Original + Laplacian)')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+The Laplacian filter detects edges by measuring how quickly pixel intensities are changing. It uses second derivatives, which means it looks at the rate of change of the rate of change. I implemented two versions with different kernels:
+
+\begin{itemize}
+    \item \textbf{Negative Center Kernel} \(\begin{bmatrix}0&1&0\\1&-4&1\\0&1&0\end{bmatrix}\): The center value is negative, so edges appear dark. To sharpen the image, we subtract this Laplacian result from the original.
+    \item \textbf{Positive Center Kernel} \(\begin{bmatrix}0&-1&0\\-1&4&-1\\0&-1&0\end{bmatrix}\): The center value is positive, so edges appear bright. To sharpen, we add this Laplacian result to the original.
+\end{itemize}
+
+Both methods work equally well - they just differ in whether you're adding or subtracting. The Laplacian is great at finding edges and fine details, and when we add them back to the original image, it makes everything look sharper and clearer.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/laplacian_edges.png}
+\caption{Laplacian Response (Edge Highlights)}
+\end{figure}
+
+% ===================== PROBLEM (f): Unsharp Masking =====================
+\section{Problem (f): Unsharp Masking}
+\textbf{Objective:} \textit{Sharpen the image by adding back high-frequency details.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Unsharp Masking}]
+# Unsharp Masking with parameter k
+def unsharp_masking(img, k=1):
+    blurred = box_filter(img)
+    mask = img - blurred
+    result = img + k * mask
+    return np.clip(result, 0, 255).astype(np.uint8)
+
+k_value = 1
+unsharp_result = unsharp_masking(img, k=k_value)
+
+# Display results
+plt.figure(figsize=(20,5))
+plt.subplot(1,4,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,4,2)
+plt.imshow(box_filter(img), cmap='gray')
+plt.title('Blurred')
+plt.axis('off')
+
+plt.subplot(1,4,3)
+mask = img - box_filter(img)
+plt.imshow(mask, cmap='gray')
+plt.title('Mask (Original - Blurred)')
+plt.axis('off')
+
+plt.subplot(1,4,4)
+plt.imshow(unsharp_result, cmap='gray')
+plt.title(f'Unsharp Masking (k={k_value})')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Unsharp masking is a popular sharpening technique used by photographers. Here's how it works: First, I blur the image using a box filter. Then I subtract this blurred version from the original to create a "mask" that contains only the high-frequency details (edges and fine textures). Finally, I add this mask back to the original image, scaled by a parameter \(k\). When \(k=1\), we get standard sharpening. When \(k>1\), the sharpening effect is stronger. The beauty of this method is that we're isolating and enhancing just the details we want to make stand out. I clamp the final result to stay within valid pixel values (0-255).
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/unsharp_demo.png}
+\caption{Unsharp Masking: Original vs. Sharpened}
+\end{figure}
+
+% ===================== PROBLEM (g): High-Boost Filtering =====================
+\section{Problem (g): High-Boost Filtering}
+\textbf{Objective:} \textit{Generalize unsharp masking with a boost factor \(k>1\).}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={High-Boost Filtering}]
+# High-Boost Filter with parameter A
+def high_boost_filter(img, A=1.5):
+    blurred = box_filter(img)
+    mask = img - blurred
+    result = A * img - blurred
+    # Equivalent: result = img + (A-1)*img - blurred
+    #            = img + A*(img - blurred) - (img - blurred)
+    #            = img + (A-1)*(img - blurred)
+    return np.clip(result, 0, 255).astype(np.uint8)
+
+A_value = 1.5
+highboost_result = high_boost_filter(img, A=A_value)
+
+# Display results
+plt.figure(figsize=(20,5))
+plt.subplot(1,4,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,4,2)
+plt.imshow(box_filter(img), cmap='gray')
+plt.title('Blurred')
+plt.axis('off')
+
+plt.subplot(1,4,3)
+mask = img - box_filter(img)
+plt.imshow(mask, cmap='gray')
+plt.title('Mask (Original - Blurred)')
+plt.axis('off')
+
+plt.subplot(1,4,4)
+plt.imshow(highboost_result, cmap='gray')
+plt.title(f'High-Boost Filter (A={A_value})')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+High-boost filtering takes unsharp masking to the next level. Instead of just adding the detail mask back to the original, we amplify the original image first using a factor \(A\). The formula is: result = \(A \times\) original - blurred. When \(A=1\), this is exactly the same as regular unsharp masking. When \(A>1\), we get both a brighter image and stronger edge enhancement. Think of \(A\) as a boost dial - the higher you turn it, the more dramatic the effect. This is useful when you want to really make details pop, but you need to be careful not to overdo it and create artifacts. As always, I clip the result to keep pixel values valid.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/highboost_demo.png}
+\caption{High-Boost Filtering with Different \(k\) Values}
+\end{figure}
+
+% ===================== PROBLEM (h): Laplacian Sharpening =====================
+\section{Problem (h): Laplacian-based Sharpening}
+\textbf{Objective:} \textit{Use Laplacian response to enhance edges.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Laplacian Sharpening}]
+# Note: This section demonstrates the sharpening effect already 
+# shown in Problem (e) with both Laplacian kernel versions.
+
+# Using Negative Center Kernel:
+# lap_result = laplacian_filter(img)
+# sharpened = img - lap_result
+
+# Using Positive Center Kernel:
+# lap_result = laplacian_filter(img)
+# sharpened = img + lap_result
+
+# Both approaches shown in Problem (e) with full visualization
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+This section demonstrates Laplacian-based sharpening, which I already showed in Problem (e). The key idea is simple: the Laplacian filter finds edges, and when we add those edges back to (or subtract them from) the original image, we get a sharpened result. Whether you add or subtract depends on which kernel version you use. The negative center kernel gives negative edge values (so we subtract), while the positive center kernel gives positive edge values (so we add). Both approaches work great for bringing out fine details and making images look crisper. This is actually one of the oldest and most widely-used sharpening techniques in image processing.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/laplacian_sharpened.png}
+\caption{Laplacian-based Sharpening}
+\end{figure}
+
+% ===================== PROBLEM (i): Sobel Edge Detection =====================
+\section{Problem (i): Sobel Edge Detection}
+\textbf{Objective:} \textit{Compute gradient magnitude (and optionally orientation) using Sobel operators.}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Sobel Filters (H \& V, Magnitude)}]
+# Sobel Edge Detection
+def sobel_filters(img):
+    sobel_h = np.array([[-1, -2, -1],
+                        [ 0,  0,  0],
+                        [ 1,  2,  1]], dtype=np.float32)
+    
+    sobel_v = np.array([[-1,  0,  1],
+                        [-2,  0,  2],
+                        [-1,  0,  1]], dtype=np.float32)
+    
+    Gh = convolution(img, sobel_h)
+    Gv = convolution(img, sobel_v)
+    Gmag = np.sqrt(Gh**2 + Gv**2)
+    Gmag = np.clip(Gmag, 0, 255).astype(np.uint8)
+    
+    return Gh, Gv, Gmag
+
+Gh, Gv, Gmag = sobel_filters(img)
+
+# Display results
+plt.figure(figsize=(20,5))
+plt.subplot(1,4,1)
+plt.imshow(img, cmap='gray')
+plt.title('Original')
+plt.axis('off')
+
+plt.subplot(1,4,2)
+plt.imshow(Gh, cmap='gray')
+plt.title('Sobel Horizontal (Gh)')
+plt.axis('off')
+
+plt.subplot(1,4,3)
+plt.imshow(Gv, cmap='gray')
+plt.title('Sobel Vertical (Gv)')
+plt.axis('off')
+
+plt.subplot(1,4,4)
+plt.imshow(Gmag, cmap='gray')
+plt.title('Sobel Magnitude')
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Sobel edge detection is one of the most popular edge detection methods. It uses two special \(3\times 3\) kernels - one for horizontal edges and one for vertical edges. The horizontal kernel \(\begin{bmatrix}-1&-2&-1\\0&0&0\\1&2&1\end{bmatrix}\) responds strongly to horizontal edges (where the intensity changes from top to bottom), while the vertical kernel \(\begin{bmatrix}-1&0&1\\-2&0&2\\-1&0&1\end{bmatrix}\) responds to vertical edges (where intensity changes from left to right). 
+
+After applying both kernels, I combine them using the Pythagorean theorem: \(G_{mag} = \sqrt{G_h^2 + G_v^2}\). This gives us the overall edge strength at each point, regardless of direction. The beautiful thing about Sobel is that it's simple, fast, and produces clean edge maps that work well for most images. Higher magnitude values mean stronger edges.
+
+\subsection{Output Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{Figures/sobel_h_v_mag.png}
+\caption{Sobel Horizontal, Vertical, and Magnitude}
+\end{figure}
+
+
+% ===================== OVERALL DISCUSSION & CONCLUSION =====================
+\newpage
+\section*{Overall Discussion and Conclusion}
+\addcontentsline{toc}{section}{Overall Discussion and Conclusion}
+
+In this lab, I implemented a comprehensive set of spatial filters and edge detection techniques from scratch using Python. The experience gave me a much deeper understanding of how these filters actually work, rather than just calling library functions.
+
+I started by building the fundamental building blocks - a padding function to handle image borders and a general convolution function that can work with any kernel. These utilities became the foundation for everything else. The smoothing filters (box and weighted average) showed me how different kernel designs affect the blur quality. The box filter is simple but effective, while the weighted average produces smoother, more natural-looking results.
+
+The median filter was particularly interesting because it works so differently from the averaging filters. Instead of blending pixel values together, it picks the middle value, which makes it excellent at removing salt-and-pepper noise while keeping edges sharp. The min and max filters introduced me to morphological operations - I could see how they erode or dilate features in the image.
+
+For edge detection and sharpening, the Laplacian filter taught me about second-order derivatives and how they respond to rapid intensity changes. I implemented both kernel versions and saw how the same mathematical concept can be implemented in different ways. Unsharp masking and high-boost filtering showed me how we can decompose an image into low and high frequency components, then manipulate them separately to enhance details.
+
+Finally, the Sobel filter demonstrated first-order derivative approaches to edge detection. By using separate horizontal and vertical kernels, it can detect edges in different orientations and combine them into a single edge strength map. This is more sophisticated than the Laplacian because it gives us directional information.
+
+Overall, this lab showed me that image processing is really about understanding what mathematical operations do to pixel neighborhoods, and how we can design kernels to achieve specific effects. The modular design I used - building reusable padding and convolution functions first, then implementing specific filters on top - made the code clean and easy to experiment with. Each filter has its strengths and trade-offs, and choosing the right one depends on what you're trying to achieve and what kind of noise or features you're dealing with.
+
+\end{document}

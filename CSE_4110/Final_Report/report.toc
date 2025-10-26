@@ -1,0 +1,115 @@
+\contentsline {section}{\numberline {1}Chapter 1: Introduction to Systems}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}What is a System?}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Tech Rajshahi Ltd.}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Services Provided by Tech Rajshahi Ltd.}{7}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Mission, Vision and Values}{8}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Mission}{8}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Vision}{8}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Core Values and Principles}{8}{subsubsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.6}Qualities Defining Tech Rajshahi Ltd.}{8}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Leadership Structure}{8}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Work Showcase}{10}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Clients and Success Stories}{10}{subsection.1.9}%
+\contentsline {subsubsection}{\numberline {1.9.1}Developed Applications \& Websites - Detailed Portfolio}{10}{subsubsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.10}Conclusion:}{13}{subsection.1.10}%
+\contentsline {section}{\numberline {2}Chapter 2: Initial Feasibility Analysis}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Problem Analysis}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Problem Statements}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Talent Retention}{14}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Lack of E‑commerce Knowledge in Interested People}{15}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Challenges in Achieving Profitability}{16}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Facing Challenges to Attain Client’s Satisfaction}{16}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Conclusion}{17}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Chapter 3: Information Gathering}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introduction}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Information Gathering}{18}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Information Gathering Tools}{19}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Review of Literature, Procedures, and Forms}{19}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}On‑site Observation}{21}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Interviews}{22}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Questionnaire}{25}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Conclusion}{31}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Chapter 4: Structured Analysis}{32}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{32}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Data Flow Diagram (DFD)}{32}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Introduction}{32}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Overview of the Present System}{32}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Context Diagram}{33}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Level 1 DFD}{33}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Data Dictionary}{37}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Data Elements}{38}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Data Stores}{39}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Data Flows}{40}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Data Structures}{41}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Decision Tree}{41}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Decision Table}{42}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Conclusion}{43}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Chapter 5: Feasibility Study}{44}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Introduction}{44}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Feasibility Considerations}{44}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Economic Feasibility}{44}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Technical Feasibility}{44}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Operational Feasibility}{44}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}Steps of Feasibility Analysis}{44}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Initial Feasibility Study}{45}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Existing System Constraints}{45}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Proposed System Goals}{45}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Feasibility Analysis Steps}{46}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Characteristics of Candidate Systems}{48}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Candidate Qualitative Evaluation Matrix}{48}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Performance/Cost Evaluation Matrix}{48}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}Project Cost Estimates}{49}{subsubsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.5}Weighted Candidate Evaluation Matrix}{49}{subsubsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.6}Feasibility Report}{50}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Conclusion}{50}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Chapter 6: Cost–Benefit Analysis}{51}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Introduction}{51}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Objectives of Cost–Benefit Analysis}{51}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Types of Costs and Benefits}{51}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Costs}{51}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Benefits}{51}{subsubsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.4}Cost Estimation (in BDT)}{52}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Benefit Estimation (in BDT)}{53}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Financial Metrics Formulas}{54}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Comparative Cost–Benefit Summary}{55}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Interpretation and Analysis}{55}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Recommendation}{56}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}Conclusion}{56}{subsection.6.10}%
+\contentsline {section}{\numberline {7}Chapter 7: System Design}{57}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Introduction}{57}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Objectives of System Design}{57}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Types of System Design}{57}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Logical Design}{57}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Physical Design}{57}{subsubsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.4}Stages of System Design}{58}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Stage 1: Requirement Review}{58}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Stage 2: Architectural Design}{58}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Stage 3: Database Design}{58}{subsubsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.4}Stage 4: Interface Design}{58}{subsubsection.7.4.4}%
+\contentsline {subsubsection}{\numberline {7.4.5}Stage 5: Security and Control Design}{58}{subsubsection.7.4.5}%
+\contentsline {subsubsection}{\numberline {7.4.6}Stage 6: Design Verification}{58}{subsubsection.7.4.6}%
+\contentsline {subsection}{\numberline {7.5}Design Methodology}{58}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Logical Design for Tech Rajshahi}{59}{subsection.7.6}%
+\contentsline {subsubsection}{\numberline {7.6.1}Process Design}{59}{subsubsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.2}Data Flow Diagram for AI-Powered System}{59}{subsubsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.3}Data Design}{62}{subsubsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.4}Interface Design}{62}{subsubsection.7.6.4}%
+\contentsline {subsection}{\numberline {7.7}Physical Design for Tech Rajshahi}{63}{subsection.7.7}%
+\contentsline {subsubsection}{\numberline {7.7.1}Hardware and Network Setup}{63}{subsubsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.2}Database Implementation}{63}{subsubsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.3}Entity-Relationship Diagram (ERD)}{64}{subsubsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.4}Software and Technology Stack}{66}{subsubsection.7.7.4}%
+\contentsline {subsubsection}{\numberline {7.7.5}Deployment Environment}{66}{subsubsection.7.7.5}%
+\contentsline {subsection}{\numberline {7.8}Functional Decomposition and Structured Chart}{67}{subsection.7.8}%
+\contentsline {subsubsection}{\numberline {7.8.1}Level 0: System Overview}{67}{subsubsection.7.8.1}%
+\contentsline {subsubsection}{\numberline {7.8.2}Level 1: Major Functional Modules}{67}{subsubsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.3}Level 2: Sub-Module Decomposition}{68}{subsubsection.7.8.3}%
+\contentsline {subsubsection}{\numberline {7.8.4}Level 3: Detailed Component Functions}{69}{subsubsection.7.8.4}%
+\contentsline {subsubsection}{\numberline {7.8.5}Structured Chart Representation}{70}{subsubsection.7.8.5}%
+\contentsline {subsection}{\numberline {7.9}Coupling and Cohesion}{70}{subsection.7.9}%
+\contentsline {subsubsection}{\numberline {7.9.1}Coupling}{70}{subsubsection.7.9.1}%
+\contentsline {subsubsection}{\numberline {7.9.2}Cohesion}{71}{subsubsection.7.9.2}%
+\contentsline {subsection}{\numberline {7.10}Design Deliverables}{71}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Conclusion}{71}{subsection.7.11}%

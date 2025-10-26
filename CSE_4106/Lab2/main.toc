@@ -1,0 +1,10 @@
+\contentsline {section}{Bilinear Interpolation for Image Resizing}{2}{chapter*.2}%
+\contentsline {section}{\numberline {1}OpenCV Bilinear Interpolation}{2}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}Code Snippet}{2}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {1.2}Implementation Approach}{2}{subsection.0.1.2}%
+\contentsline {subsection}{\numberline {1.3}Output}{2}{subsection.0.1.3}%
+\contentsline {section}{\numberline {2}Manual Bilinear Interpolation Implementation}{3}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Code Snippet}{3}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}Implementation Approach}{4}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}Verification}{4}{subsection.0.2.3}%
+\contentsline {section}{Discussion and Conclusion}{5}{subsection.0.2.3}%

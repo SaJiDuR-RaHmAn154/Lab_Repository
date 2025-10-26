@@ -1,0 +1,532 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{array,geometry,graphicx,fancyhdr,amsmath,amsfonts,amssymb,color,hyperref,listings}
+\usepackage{booktabs,multirow,subcaption,titlesec,multicol,caption,colortbl,enumitem}
+\usepackage{float}  % For [H] option in figures
+
+% Remove chapter numbering from sections (make sections numbered as 1, 2, 3 instead of 0.1, 0.2, 0.3)
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% ===================== PROFESSIONAL COLOR SCHEME =====================
+\definecolor{primaryblue}{RGB}{0,82,165}
+\definecolor{secondaryblue}{RGB}{25,118,210}
+\definecolor{accentblue}{RGB}{100,181,246}
+\definecolor{darkgray}{RGB}{66,66,66}
+\definecolor{mediumgray}{RGB}{117,117,117}
+\definecolor{lightgray}{RGB}{238,238,238}
+
+% Code listings styling
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{lightgray},
+    frame=leftline,
+    framerule=3pt,
+    rulecolor=\color{primaryblue},
+    breaklines=true,
+    captionpos=b,
+    numbers=left,
+    numberstyle=\tiny\color{darkgray}\bfseries,
+    stepnumber=1,
+    numbersep=12pt,
+    keywordstyle=\color{primaryblue}\bfseries,
+    commentstyle=\color{mediumgray}\itshape,
+    stringstyle=\color{secondaryblue},
+    showstringspaces=false,
+    tabsize=2,
+    xleftmargin=20pt,
+    framexleftmargin=15pt
+}
+
+% Section formatting
+\titleformat{\section}[hang]
+  {\normalfont\Large\bfseries\color{primaryblue}}
+  {\colorbox{primaryblue}{\textcolor{white}{\makebox[2em]{\thesection}}}}{0.5em}
+  {\color{primaryblue}}
+  [\vspace{3pt}{\color{primaryblue}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}[hang]
+  {\normalfont\large\bfseries\color{secondaryblue}}
+  {\colorbox{secondaryblue}{\textcolor{white}{\makebox[2.5em]{\thesubsection}}}}{0.5em}
+  {\color{secondaryblue}}
+  [\vspace{2pt}{\color{secondaryblue}\titlerule[1pt]}]
+
+% Geometry
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=25pt,
+    headsep=20pt,
+    footskip=20pt,
+    includeheadfoot
+}
+
+% Headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{primaryblue}{\textbf{CSE 4106: Digital Image Processing Sessional}}}
+\fancyhead[R]{\textcolor{primaryblue}{\textbf{Lab 3: Geometric Transformations}}}
+\fancyfoot[C]{\textcolor{primaryblue}{\textbf{\thepage}}}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{primaryblue}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{lightgray}\leaders\hrule height \footrulewidth\hfill}}
+
+\fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyfoot[C]{\textcolor{primaryblue}{\textbf{\thepage}}}%
+    \renewcommand{\headrulewidth}{0pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+}
+
+% Caption styling
+\captionsetup{
+    font={bf,small},
+    labelfont={color=primaryblue, bf},
+    justification=centering
+}
+
+% Hyperref
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    filecolor=secondaryblue,
+    urlcolor=accentblue
+}
+
+\begin{document}
+
+% ===================== COVER PAGE =====================
+\begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{0.5cm}
+    {\large \textbf{"Heaven's Light is Our Guide"}}\\[0.3cm]
+    \includegraphics[width=4cm]{../Lab5/ruet_logo.png}\\[0.4cm]
+    {\Large \textbf{Department of Computer Science \& Engineering}}\\[0.3cm]
+    {\large \textbf{Rajshahi University of Engineering \& Technology}}\\[0.8cm]
+    {\LARGE \textbf{Lab Report-3}}\\[0.5cm]
+    {\LARGE \textbf{Digital Image Processing Sessional}}\\[0.5cm]
+    {\LARGE \textbf{Course Code: CSE 4106}}\\[0.3cm]
+
+    \vspace{0.8cm}
+    \begin{table}[h!]
+    \centering
+    \setlength{\arrayrulewidth}{1.5pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|p{8.5cm}|p{6.5cm}|}
+        \hline
+        \multicolumn{1}{|c|}{\large \textbf{Submitted By:}} & \multicolumn{1}{c|}{\large \textbf{Submitted To:}} \\
+        \hline
+        & \\
+        \large \textbf{Name: Sajidur Rahman Tarafder} & \multirow{5}{*}{\parbox{6.5cm}{\centering 
+        \large \textbf{Khaled Zinnurine}\\
+        \vspace{0.2cm}
+        \large \textbf{Lecturer}\\
+        \vspace{0.2cm}
+        \large \textbf{Department of CSE, RUET}}}\\
+        \large \textbf{Roll: 2003154} & \\
+        \large \textbf{Section: C} & \\
+        \large \textbf{Session: 2020-21} & \\
+        \large \textbf{Department: CSE} & \\
+        & \\
+        \hline
+    \end{tabular}
+    \end{table}
+\end{titlepage}
+
+% ===================== TABLE OF CONTENTS =====================
+\pagestyle{fancy}
+\tableofcontents
+\newpage
+
+% ===================== EXPERIMENT TITLE =====================
+\section*{Geometric Transformations on Images}
+\addcontentsline{toc}{section}{Geometric Transformations on Images}
+\textbf{Objective:} Implement various geometric transformations (Translation, Rotation, Scaling, Shearing, and Combined Affine Transformations) from scratch using Python.
+
+\vspace{0.5cm}
+
+% Reset section counter
+\setcounter{section}{0}
+
+% ===================== SECTION 1: IMAGE LOADING =====================
+\section{Image Loading and Preprocessing}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Loading and Displaying Original Image}]
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load image and convert to RGB
+img = cv2.imread("bird.jpg")
+img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+# Display original image
+plt.figure(figsize=(12, 5))
+plt.imshow(img)
+plt.title('Original Image')
+plt.axis('off')
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+I start by loading a color image using OpenCV's \texttt{imread} function. Since OpenCV reads images in BGR format but matplotlib displays in RGB format, I convert the color space using \texttt{cvtColor}. This ensures the colors appear correctly when visualizing the results. The original image serves as the baseline for all subsequent transformations.
+
+% ===================== SECTION 2: TRANSLATION =====================
+\section{Translation Transformation}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Manual Translation Implementation}]
+# Translation parameters
+tx = 60  # Shift right by 60 pixels
+ty = 60  # Shift down by 60 pixels
+
+height, width = img.shape[:2]
+result = np.zeros_like(img)
+
+# Apply translation pixel by pixel
+for y in range(height):
+    for x in range(width):
+        new_x = x + tx
+        new_y = y + ty
+
+        if new_x < width and new_y < height:
+            result[new_y, new_x] = img[y, x]
+
+# Display results
+plt.figure(figsize=(12, 5))
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+plt.title("Original Image")
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.imshow(result)
+plt.title(f"Translated Image")
+plt.axis('off')
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Translation is the simplest geometric transformation - it just moves the entire image to a new position. I implemented this by iterating through every pixel in the original image and placing it at a new location calculated by adding the translation offsets (tx, ty) to the original coordinates.
+
+The formula is straightforward:
+\begin{itemize}
+    \item \texttt{new\_x = x + tx}
+    \item \texttt{new\_y = y + ty}
+\end{itemize}
+
+I created a blank canvas the same size as the original and copied each pixel to its new location. The boundary check ensures we don't try to write pixels outside the image bounds. Parts of the original image that would be shifted outside the canvas are simply not displayed, creating blank areas (visible as black regions) where the image moved from.
+
+% ===================== SECTION 3: ROTATION =====================
+\section{Rotation Transformation}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Manual Rotation Around Center}]
+# Rotation parameters
+angle = 180  # Rotate 180 degrees
+
+height, width = img.shape[:2]
+center_x = width // 2
+center_y = height // 2
+
+# Convert angle to radians
+angle_rad = np.radians(angle)
+cos_theta = np.cos(angle_rad)
+sin_theta = np.sin(angle_rad)
+
+result = np.zeros_like(img)
+
+# Apply rotation pixel by pixel
+for y in range(height):
+    for x in range(width):
+        # Step 1: Translate to origin
+        new_x = x - center_x
+        new_y = y - center_y
+        
+        # Step 2: Apply rotation
+        u = new_x * cos_theta - new_y * sin_theta
+        v = new_x * sin_theta + new_y * cos_theta
+        
+        # Step 3: Translate back
+        u = int(u + center_x)
+        v = int(v + center_y)
+        
+        if 0 <= u < width and 0 <= v < height:
+            result[v, u] = img[y, x]
+
+# Display results
+plt.figure(figsize=(12, 5))
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+plt.title("Original Image")
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.imshow(result)
+plt.title(f"Rotated {angle} degrees")
+plt.axis('off')
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Rotation is more complex than translation because we need to rotate around a specific point (usually the image center). The rotation transformation uses trigonometry with the rotation matrix formulas:
+
+\begin{align*}
+u &= x \cos(\theta) - y \sin(\theta) \\
+v &= x \sin(\theta) + y \cos(\theta)
+\end{align*}
+
+However, these formulas rotate around the origin (0,0). To rotate around the image center, I use a three-step process:
+
+\textbf{Step 1 - Translate to Origin:} Shift all coordinates so the center point becomes (0,0).
+
+\textbf{Step 2 - Apply Rotation:} Use the rotation formulas with pre-calculated sine and cosine values.
+
+\textbf{Step 3 - Translate Back:} Shift the rotated coordinates back so the center returns to its original position.
+
+The angle is converted from degrees to radians because trigonometric functions in programming use radians. I pre-calculate \texttt{cos($\theta$)} and \texttt{sin($\theta$)} outside the loop for efficiency since they're constant for all pixels.
+
+% ===================== SECTION 4: SCALING =====================
+\section{Scaling Transformation}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Manual Scaling Implementation}]
+# Scaling parameters
+scale_x = 0.5  # Scale down to 50% width
+scale_y = 1.2  # Scale up to 120% height
+
+height, width = img.shape[:2]
+
+# Calculate new dimensions
+new_width = int(width * scale_x)
+new_height = int(height * scale_y)
+
+result = np.zeros((new_height, new_width, 3), dtype=img.dtype)
+
+# Apply scaling pixel by pixel
+for y in range(height):
+    for x in range(width):
+        new_x = int(x * scale_x)
+        new_y = int(y * scale_y)
+        
+        if new_x < new_width and new_y < new_height:
+            result[new_y, new_x] = img[y, x]
+
+# Display results
+plt.figure(figsize=(15, 6))
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+plt.title(f"Original ({height}x{width})")
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.imshow(result)
+plt.title(f"Scaled ({new_height}x{new_width})")
+plt.axis('off')
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Scaling changes the size of the image by multiplying the coordinates by scale factors. I can scale the width and height independently, allowing for stretching or squashing in different directions.
+
+The scaling transformation is:
+\begin{itemize}
+    \item \texttt{new\_x = x × scale\_x}
+    \item \texttt{new\_y = y × scale\_y}
+\end{itemize}
+
+First, I calculate the output image dimensions by multiplying the original dimensions by the scale factors. Then I create a blank canvas of this new size. When iterating through the original image, I multiply each pixel's coordinates by the scale factors to determine where it goes in the scaled image.
+
+Scale factors less than 1 shrink the image, while factors greater than 1 enlarge it. In this example, I used 0.5 for width (making it narrower) and 1.2 for height (making it taller), demonstrating non-uniform scaling. This approach creates gaps in the output image (visible as black dots) because we're using forward mapping - some output pixels don't get assigned values. A production implementation would use inverse mapping or interpolation to fill these gaps.
+
+% ===================== SECTION 5: SHEARING =====================
+\section{Shearing Transformation}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Manual Shearing Implementation}]
+# Shearing parameters
+shear_x = 0.3  # Horizontal shear factor
+shear_y = 0.5  # Vertical shear factor
+
+height, width = img.shape[:2]
+
+# Calculate new dimensions to accommodate shearing
+new_width = width + int(abs(shear_x * height))
+new_height = height + int(abs(shear_y * width))
+
+result = np.zeros((new_height, new_width, 3), dtype=img.dtype)
+
+# Apply shearing pixel by pixel
+for y in range(height):
+    for x in range(width):
+        new_x = int(x + shear_x * y)
+        new_y = int(y + shear_y * x)
+        
+        if new_x < new_width and new_y < new_height:
+            result[new_y, new_x] = img[y, x]
+
+# Display results
+plt.figure(figsize=(15, 6))
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+plt.title("Original Image")
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.imshow(result)
+plt.title(f"Sheared (shx={shear_x}, shy={shear_y})")
+plt.axis('off')
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Shearing creates a slanted or skewed appearance by shifting pixels proportionally to their position. It's like pushing the top of the image while keeping the bottom fixed, or vice versa.
+
+The shearing transformation formulas are:
+\begin{itemize}
+    \item \texttt{new\_x = x + shear\_x × y}
+    \item \texttt{new\_y = y + shear\_y × x}
+\end{itemize}
+
+Shearing is interesting because it changes the shape of the image without changing the relative positions of points along parallel lines. The amount of shift increases linearly with position - pixels at the top of the image shift more than pixels at the bottom.
+
+Since shearing expands the image bounds, I calculate new dimensions that are large enough to hold the sheared result. The horizontal shear factor affects the width increase, and the vertical shear factor affects the height increase. Positive shear values push the image in the positive direction, while negative values would push it the opposite way.
+
+% ===================== SECTION 6: COMBINED TRANSFORMATIONS =====================
+\section{Combined Affine Transformation}
+
+\subsection{Code Snippet}
+\begin{lstlisting}[language=Python, caption={Rotation Followed by Translation}]
+# Combined transformation parameters
+angle = 45   # Rotate 45 degrees
+tx = 60      # Then shift right 60 pixels
+ty = 40      # Then shift down 40 pixels
+
+height, width = img.shape[:2]
+center_x = width // 2
+center_y = height // 2
+
+angle_rad = np.radians(angle)
+cos_theta = np.cos(angle_rad)
+sin_theta = np.sin(angle_rad)
+
+result = np.zeros_like(img)
+
+# Apply combined transformation pixel by pixel
+for y in range(height):
+    for x in range(width):
+        # Step 1: Translate to origin
+        new_x = x - center_x
+        new_y = y - center_y
+        
+        # Step 2: Apply rotation
+        rotated_x = new_x * cos_theta - new_y * sin_theta
+        rotated_y = new_x * sin_theta + new_y * cos_theta
+        
+        # Step 3: Translate back to center
+        x_after_rotation = rotated_x + center_x
+        y_after_rotation = rotated_y + center_y
+        
+        # Step 4: Apply translation
+        final_x = int(x_after_rotation + tx)
+        final_y = int(y_after_rotation + ty)
+        
+        if 0 <= final_x < width and 0 <= final_y < height:
+            result[final_y, final_x] = img[y, x]
+
+# Display results
+plt.figure(figsize=(12, 7))
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+plt.title("Original Image")
+plt.axis('off')
+
+plt.subplot(1, 2, 2)
+plt.imshow(result)
+plt.title(f"Rotated {angle} degrees + Translated ({tx}, {ty})")
+plt.axis('off')
+plt.show()
+\end{lstlisting}
+
+\subsection{Implementation Approach}
+Combined transformations show the real power of geometric operations. By applying multiple transformations in sequence, we can create complex effects. This example combines rotation and translation to both spin and move the image.
+
+The order of operations matters! I first rotate the image around its center, then translate it. If we did translation first, the rotation would happen around a different point, giving a completely different result.
+
+The four-step process is:
+\begin{enumerate}
+    \item Translate coordinates to origin for rotation
+    \item Apply rotation transformation
+    \item Translate back from origin
+    \item Apply translation to final position
+\end{enumerate}
+
+This demonstrates an important principle: complex transformations can be built by composing simple ones. In real applications, you'd typically use transformation matrices to combine multiple operations efficiently, but this manual implementation shows clearly what's happening at each step.
+
+% ===================== DISCUSSION =====================
+\newpage
+\section*{Discussion and Conclusion}
+\addcontentsline{toc}{section}{Discussion and Conclusion}
+
+In this lab, I implemented five fundamental geometric transformations from scratch: translation, rotation, scaling, shearing, and combined transformations. This hands-on implementation gave me deep insights into how these operations work at the pixel level.
+
+\subsection*{Key Learnings}
+
+\textbf{Translation} is the simplest transformation - just adding offsets to coordinates. It's used everywhere in computer graphics, from moving game characters to panning camera views.
+
+\textbf{Rotation} requires trigonometry and careful handling of the rotation center. The three-step process (translate to origin, rotate, translate back) is a fundamental pattern that appears in many graphics algorithms. Understanding this helped me see why transformation matrices are so useful in production code.
+
+\textbf{Scaling} can be uniform (same factor in all directions) or non-uniform (different factors for width and height). The gaps in my scaled images showed me why interpolation is important in real image processing - professional implementations use techniques like bilinear interpolation to fill in missing pixels.
+
+\textbf{Shearing} creates interesting skewed effects and is less commonly used alone but is important for understanding perspective transformations and 3D projections. It's also used in correcting image distortions.
+
+\textbf{Combined transformations} demonstrated that complex effects come from composing simple operations. The order matters - rotating then translating gives different results than translating then rotating.
+
+\subsection*{Implementation Challenges}
+
+The main challenge was handling the "holes" in the output images. My forward mapping approach (going from source to destination) leaves gaps because multiple source pixels might map to the same destination pixel, while other destination pixels get no source pixel. Professional implementations use:
+
+\begin{itemize}
+    \item \textbf{Inverse mapping:} For each output pixel, calculate which input pixel it should come from
+    \item \textbf{Interpolation:} Use bilinear or bicubic interpolation to fill gaps smoothly
+    \item \textbf{Anti-aliasing:} Smooth the edges to avoid jagged appearance
+\end{itemize}
+
+Another challenge was maintaining image quality. Transformations can introduce artifacts, especially with multiple operations. Understanding these issues helps explain why image processing libraries have so many options for interpolation methods and quality settings.
+
+\subsection*{Real-World Applications}
+
+These transformations are fundamental to:
+\begin{itemize}
+    \item \textbf{Computer Vision:} Image registration, object tracking, augmented reality
+    \item \textbf{Medical Imaging:} Aligning scans from different angles or time periods
+    \item \textbf{Computer Graphics:} Game engines, 3D rendering, animation
+    \item \textbf{Photography:} Image editing software, panorama stitching, perspective correction
+    \item \textbf{Document Processing:} OCR systems, document alignment
+\end{itemize}
+
+\subsection*{Mathematical Foundation}
+
+All these transformations can be represented as matrix operations. In homogeneous coordinates, each transformation becomes a 3×3 matrix:
+
+\begin{itemize}
+    \item Translation, rotation, scaling, and shearing can all be expressed as matrix multiplications
+    \item Multiple transformations combine by multiplying their matrices
+    \item This matrix representation is what makes modern graphics hardware so fast
+\end{itemize}
+
+Understanding the manual implementation first made me appreciate why libraries like OpenCV use optimized matrix operations - they're mathematically elegant and computationally efficient.
+
+\subsection*{Conclusion}
+
+This lab showed me that geometric transformations aren't just black-box functions in a library - they're based on clear mathematical principles that can be implemented with basic operations. While my implementations were educational, they also highlighted why production code uses inverse mapping, interpolation, and hardware acceleration. The gaps and artifacts in my results aren't failures - they're learning opportunities that show exactly what professional implementations need to handle.
+
+Most importantly, I now understand transformation composition and can debug issues in real applications because I know what's happening under the hood. This foundational knowledge will be valuable whether I'm working with computer vision, computer graphics, or any field that manipulates visual data.
+
+\end{document}
