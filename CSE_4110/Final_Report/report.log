@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.11)  26 OCT 2025 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.11)  27 OCT 2025 21:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -964,7 +964,7 @@ Package pdftex.def Info: Fig/role.png  used on input line 806.
 <Fig/we.png, id=835, 423.5825pt x 157.58875pt>
 File: Fig/we.png Graphic file (type png)
 <use Fig/we.png>
-Package pdftex.def Info: Fig/we.png  used on input line 814.
+Package pdftex.def Info: Fig/we.png  used on input line 815.
 (pdftex.def)             Requested size: 455.24411pt x 169.37332pt.
 
 
@@ -972,69 +972,69 @@ Package pdftex.def Info: Fig/we.png  used on input line 814.
 <Fig/pg.png, id=844, 421.575pt x 156.585pt>
 File: Fig/pg.png Graphic file (type png)
 <use Fig/pg.png>
-Package pdftex.def Info: Fig/pg.png  used on input line 823.
+Package pdftex.def Info: Fig/pg.png  used on input line 824.
 (pdftex.def)             Requested size: 455.24411pt x 169.09494pt.
 <Fig/wlb.png, id=845, 427.5975pt x 165.61874pt>
 File: Fig/wlb.png Graphic file (type png)
 <use Fig/wlb.png>
-Package pdftex.def Info: Fig/wlb.png  used on input line 831.
+Package pdftex.def Info: Fig/wlb.png  used on input line 832.
 (pdftex.def)             Requested size: 455.24411pt x 176.32579pt.
-<Fig/hpg.png, id=846, 420.57124pt x 193.72375pt>
-File: Fig/hpg.png Graphic file (type png)
-<use Fig/hpg.png>
-Package pdftex.def Info: Fig/hpg.png  used on input line 839.
-(pdftex.def)             Requested size: 455.24411pt x 209.69739pt.
 
 
 [26 <./Fig/pg.png> <./Fig/wlb.png>]
-<Fig/vm.png, id=856, 430.60875pt x 170.6375pt>
+<Fig/hpg.png, id=854, 420.57124pt x 193.72375pt>
+File: Fig/hpg.png Graphic file (type png)
+<use Fig/hpg.png>
+Package pdftex.def Info: Fig/hpg.png  used on input line 840.
+(pdftex.def)             Requested size: 455.24411pt x 209.69739pt.
+<Fig/vm.png, id=855, 430.60875pt x 170.6375pt>
 File: Fig/vm.png Graphic file (type png)
 <use Fig/vm.png>
-Package pdftex.def Info: Fig/vm.png  used on input line 847.
+Package pdftex.def Info: Fig/vm.png  used on input line 848.
 (pdftex.def)             Requested size: 455.24411pt x 180.4036pt.
-<Fig/colab.png, id=857, 470.75874pt x 172.645pt>
-File: Fig/colab.png Graphic file (type png)
-<use Fig/colab.png>
-Package pdftex.def Info: Fig/colab.png  used on input line 855.
-(pdftex.def)             Requested size: 455.24411pt x 166.957pt.
 
 
 [27 <./Fig/hpg.png> <./Fig/vm.png>]
-<Fig/pj.png, id=866, 450.68375pt x 176.66pt>
+<Fig/colab.png, id=864, 470.75874pt x 172.645pt>
+File: Fig/colab.png Graphic file (type png)
+<use Fig/colab.png>
+Package pdftex.def Info: Fig/colab.png  used on input line 856.
+(pdftex.def)             Requested size: 455.24411pt x 166.957pt.
+<Fig/pj.png, id=865, 450.68375pt x 176.66pt>
 File: Fig/pj.png Graphic file (type png)
 <use Fig/pj.png>
-Package pdftex.def Info: Fig/pj.png  used on input line 863.
+Package pdftex.def Info: Fig/pj.png  used on input line 864.
 (pdftex.def)             Requested size: 455.24411pt x 178.45752pt.
-<Fig/rs.png, id=867, 420.57124pt x 167.62625pt>
-File: Fig/rs.png Graphic file (type png)
-<use Fig/rs.png>
-Package pdftex.def Info: Fig/rs.png  used on input line 871.
-(pdftex.def)             Requested size: 455.24411pt x 181.44798pt.
 
 
 [28 <./Fig/colab.png> <./Fig/pj.png>]
-<Fig/sdlc.png, id=876, 423.5825pt x 176.66pt>
+<Fig/rs.png, id=874, 420.57124pt x 167.62625pt>
+File: Fig/rs.png Graphic file (type png)
+<use Fig/rs.png>
+Package pdftex.def Info: Fig/rs.png  used on input line 872.
+(pdftex.def)             Requested size: 455.24411pt x 181.44798pt.
+<Fig/sdlc.png, id=875, 423.5825pt x 176.66pt>
 File: Fig/sdlc.png Graphic file (type png)
 <use Fig/sdlc.png>
-Package pdftex.def Info: Fig/sdlc.png  used on input line 879.
+Package pdftex.def Info: Fig/sdlc.png  used on input line 880.
 (pdftex.def)             Requested size: 455.24411pt x 189.87074pt.
-<Fig/senh.png, id=877, 424.58624pt x 300.12125pt>
-File: Fig/senh.png Graphic file (type png)
-<use Fig/senh.png>
-Package pdftex.def Info: Fig/senh.png  used on input line 887.
-(pdftex.def)             Requested size: 455.24411pt x 321.8089pt.
 
 
 [29 <./Fig/rs.png> <./Fig/sdlc.png>]
-<Fig/imp.png, id=886, 437.635pt x 178.6675pt>
+<Fig/senh.png, id=884, 424.58624pt x 300.12125pt>
+File: Fig/senh.png Graphic file (type png)
+<use Fig/senh.png>
+Package pdftex.def Info: Fig/senh.png  used on input line 888.
+(pdftex.def)             Requested size: 455.24411pt x 321.8089pt.
+<Fig/imp.png, id=885, 437.635pt x 178.6675pt>
 File: Fig/imp.png Graphic file (type png)
 <use Fig/imp.png>
-Package pdftex.def Info: Fig/imp.png  used on input line 895.
+Package pdftex.def Info: Fig/imp.png  used on input line 896.
 (pdftex.def)             Requested size: 455.24411pt x 185.85887pt.
-<Fig/work.png, id=887, 431.6125pt x 175.65625pt>
+<Fig/work.png, id=886, 431.6125pt x 175.65625pt>
 File: Fig/work.png Graphic file (type png)
 <use Fig/work.png>
-Package pdftex.def Info: Fig/work.png  used on input line 903.
+Package pdftex.def Info: Fig/work.png  used on input line 904.
 (pdftex.def)             Requested size: 455.24411pt x 185.28075pt.
 
 
@@ -2074,11 +2074,16 @@ Overfull \hbox (11.81009pt too wide) in paragraph at lines 2128--2129
 
 
 [68]
-<Fig/Structured_Chart.png, id=1098, 1432.85312pt x 419.06563pt>
+<Fig/Structured_Chart.png, id=1098, 1442.89063pt x 525.46312pt>
 File: Fig/Structured_Chart.png Graphic file (type png)
 <use Fig/Structured_Chart.png>
-Package pdftex.def Info: Fig/Structured_Chart.png  used on input line 2188.
-(pdftex.def)             Requested size: 455.24411pt x 133.14456pt.
+Package pdftex.def Info: Fig/Structured_Chart.png  used on input line 2187.
+(pdftex.def)             Requested size: 500.77129pt x 182.36739pt.
+
+Overfull \hbox (45.52718pt too wide) in paragraph at lines 2187--2188
+[][] 
+ []
+
 
 
 [69]
@@ -2107,13 +2112,13 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 Here is how much of TeX's memory you used:
  27478 strings out of 473190
  519089 string characters out of 5715799
- 917783 words of memory out of 5000000
+ 917781 words of memory out of 5000000
  50037 multiletter control sequences out of 15000+600000
  568392 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,91p,1379b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on report.pdf (73 pages, 11417033 bytes).
+Output written on report.pdf (73 pages, 11420822 bytes).
 PDF statistics:
  1228 PDF objects out of 1440 (max. 8388607)
  1037 compressed objects within 11 object streams
