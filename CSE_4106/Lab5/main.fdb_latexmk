@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1761167572.36418 "/Users/sajid/Movies/Lab_Repository/CSE_4106/Lab5/main.tex" "main.pdf" "main" 1761167573.02933 2
-  "/Users/sajid/Movies/Lab_Repository/CSE_4106/Lab5/main.tex" 1761167571.48851 31398 fb4b1eeaaa08e1bacda4dc9b4fe4edef ""
+["pdflatex"] 1761678555.10157 "/Users/sajid/Movies/Lab_Repository/CSE_4106/Lab5/main.tex" "main.pdf" "main" 1761678555.86724 2
+  "/Users/sajid/Movies/Lab_Repository/CSE_4106/Lab5/main.tex" 1761678555.01303 31398 fb4b1eeaaa08e1bacda4dc9b4fe4edef ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -130,10 +130,10 @@
   "Figures/sobel_h_v_mag.png" 0 -1 0 ""
   "Figures/unsharp_demo.png" 0 -1 0 ""
   "Figures/weighted_vs_original.png" 0 -1 0 ""
-  "main.aux" 1761167572.97055 8119 bae35949e8583fbb70eb7fbaafbc85ba "pdflatex"
-  "main.out" 1761167572.97136 6497 299d9fdd566658c315b8d91dc74f89c8 "pdflatex"
-  "main.tex" 1761167571.48851 31398 fb4b1eeaaa08e1bacda4dc9b4fe4edef ""
-  "main.toc" 1761167572.97158 3316 65ed9eba7cdbb60abcd9ed8981e63d00 "pdflatex"
+  "main.aux" 1761678555.80106 8120 5e79a1e95d25c84258d127f55778eb2a "pdflatex"
+  "main.out" 1761678555.80188 6497 299d9fdd566658c315b8d91dc74f89c8 "pdflatex"
+  "main.tex" 1761678555.01303 31398 fb4b1eeaaa08e1bacda4dc9b4fe4edef ""
+  "main.toc" 1761678555.80215 3317 c10d657ebb8c9227bb00c8f1f9a987ad "pdflatex"
   "ruet_logo.png" 1761155801.68443 49175 b8cf0d77d9dea7ccae74538c8a4303d2 ""
   (generated)
   "main.aux"
