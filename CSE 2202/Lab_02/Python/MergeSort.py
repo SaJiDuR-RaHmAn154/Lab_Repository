@@ -29,7 +29,7 @@ def MergeSort(a,low,high):
         Merge(a,low,mid,high)
 
 
-# File Writting
+# File Writing
 f=open("MergeSort.txt","w")
 n=int(input())
 for _ in range(n):
@@ -37,7 +37,7 @@ for _ in range(n):
     f.write(str(x)+'\n')
 f.close()
 
-#File Reading
+# File Reading
 a=[]
 f=open("MergeSort.txt","r")
 for line in f:

@@ -1,6 +1,6 @@
 import random
 
-#Iterative approach of MinMax Algorithm
+# Iterative approach of MinMax Algorithm
 
 def MinMaxIter(l):
     max=min=l[0]
@@ -9,7 +9,7 @@ def MinMaxIter(l):
         elif x<min : min=x
     return max,min
 
-#Recursive approach of MinMax Algorithm
+# Recursive approach of MinMax Algorithm
 
 def MinMaxRecur(l,i,j):
     if i==j :return l[i],l[i]
@@ -26,7 +26,7 @@ def MinMaxRecur(l,i,j):
         return max,min
 
 
-# File Writting
+# File Writing
 f=open("MinMax.txt","w")
 n=int(input())
 for _ in range(n):
@@ -34,7 +34,7 @@ for _ in range(n):
     f.write(str(x)+'\n')
 f.close()
 
-#File Reading
+# File Reading
 l=[]
 f=open("MinMax.txt","r")
 for line in f:
@@ -44,9 +44,9 @@ f.close()
 
 print("****Iterative MinMax****")
 max,min=MinMaxIter(l)
-print(f"Max Element:{max}\nMin ELement:{min}")
+print(f"Max Element:{max}\nMin Element:{min}")
 
 print("****Recursive MinMax****")
 max,min=MinMaxRecur(l,0,len(l)-1)
-print(f"Max Element:{max}\nMin ELement:{min}")
+print(f"Max Element:{max}\nMin Element:{min}")
 

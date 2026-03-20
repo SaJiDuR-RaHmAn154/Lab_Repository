@@ -31,7 +31,7 @@ data1 ={
     'Age' : [26,45]
 }
 
-df = pd.Dataframe(data1)
+df = pd.DataFrame(data1)
 print(df)
 print(df.head(5)) # First 5 rows will be printed
 print(df.tail(5)) # Last 5 rows will be printed

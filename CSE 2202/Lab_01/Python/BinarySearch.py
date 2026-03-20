@@ -1,6 +1,6 @@
 import random
 
-#Iterative approach of Binary Search
+# Iterative approach of Binary Search
 
 def BinarySearchIter(l,x):
     steps=0
@@ -18,7 +18,7 @@ def BinarySearchIter(l,x):
         steps+=1
     print(f"Element not found.\nSteps required:{steps}")
 
-#Recursive approach of Binary Search
+# Recursive approach of Binary Search
 
 def BinarySearchRecur(l,i,j,x):
     if i==j:
@@ -36,7 +36,7 @@ def BinarySearchRecur(l,i,j,x):
             return BinarySearchRecur(l,mid+1,j,x)
             
 
-# File Writting
+# File Writing
 
 # f=open("BinSearch.txt","w")
 # n=int(input())
@@ -45,7 +45,7 @@ def BinarySearchRecur(l,i,j,x):
 #     f.write(str(x)+'\n')
 # f.close()
 
-#File Reading
+# File Reading
 
 l=[]
 f=open("BinSearch.txt","r")
