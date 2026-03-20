@@ -9,7 +9,7 @@ def LinearSearch(l:list,x):
         steps+=1
     print("Element is not found.\nNumber of steps required:",steps)
 
-#File Writting
+# File Writing
 # f=open("linSearch.txt","w")
 # n=int(input())
 # for _ in range(n):
@@ -17,7 +17,7 @@ def LinearSearch(l:list,x):
 #     f.write(str(x)+'\n')
 # f.close()
 
-#File Reading
+# File Reading
 l=[]
 f=open("linSearch.txt","r")
 for line in f:

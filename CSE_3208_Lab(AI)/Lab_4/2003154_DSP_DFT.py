@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-n = np.linspace(100, 2, 100) 
+n = np.linspace(0, 1, 100)  
 x = 3 * np.sin(2 * np.pi * 5 * n)  # Sinusoidal Signal
 
 # DFT
@@ -16,7 +16,7 @@ PSD = (np.abs(C) ** 2) / 100
 plt.figure(figsize=(12, 5))
 
 plt.subplot(1, 2, 1)
-plt.plot(n, x)
+plt.plot(n, x, label='Sinusoidal Signal')
 plt.xlabel('Time')
 plt.ylabel('Amplitude')
 plt.title('Sinusoidal Signal')

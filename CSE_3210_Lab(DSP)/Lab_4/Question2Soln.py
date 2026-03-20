@@ -1,7 +1,7 @@
 # Question 2: Z-Transform of a Sum of Signals
 # Consider the following signal:
 
-# x[n] = 2^n * u[n] + 3^n * u[n]z
+# x[n] = 2^n * u[n] + 3^n * u[n]
 # Where u[n] is the unit step function.
 # 1. Find the Z-Transform of the signal x[n].
 # 2. Find the ROC of the system.

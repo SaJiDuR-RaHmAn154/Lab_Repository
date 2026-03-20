@@ -1,20 +1,22 @@
 import random
 
-def QuickSort(l,low,high):
+def QuickSort(l, low, high):
     if low >= high: return
-    pivot = random.randint(low, high) # choose pivot randomly
+    pivot_idx = random.randint(low, high)  # choose pivot randomly
+    l[pivot_idx], l[high] = l[high], l[pivot_idx]  # move pivot to end
+    pivot = l[high]
     s = low
 
     # partially sorting the array w.r.t pivot
-    for i in range(low, high+1):
-        if l[i] <= l[pivot]:
+    for i in range(low, high):
+        if l[i] <= pivot:
             l[s], l[i] = l[i], l[s]
             s += 1
-    if s <= high: l[s], l[pivot] = l[pivot], l[s]
-    QuickSort(l, low, pivot-1)
-    QuickSort(l, pivot+1, high)
+    l[s], l[high] = l[high], l[s]  # place pivot in its correct sorted position
+    QuickSort(l, low, s - 1)
+    QuickSort(l, s + 1, high)
 
-# File Writting
+# File Writing
 f=open("QuickSort.txt","w")
 n=int(input())
 for _ in range(n):
@@ -22,7 +24,7 @@ for _ in range(n):
     f.write(str(x)+'\n')
 f.close()
 
-#File Reading
+# File Reading
 l=[]
 f=open("QuickSort.txt","r")
 for line in f:
